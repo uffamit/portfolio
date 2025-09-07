@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from './ui/sheet';
 import { navigationLinks } from '@/data/portfolio-data';
 
 export default function Header() {
@@ -36,7 +36,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl">
-              <div className="flex flex-col h-full">
+               <SheetHeader>
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                <SheetDescription className="sr-only">A list of links to navigate the site.</SheetDescription>
                 <div className="flex items-center justify-between border-b pb-4">
                      <Link href="/" className="font-headline text-xl font-bold text-primary">
                         Amit Divekar
@@ -48,6 +50,8 @@ export default function Header() {
                         </Button>
                     </SheetTrigger>
                 </div>
+              </SheetHeader>
+              <div className="flex flex-col h-full">
                 <nav className="mt-8 flex flex-col gap-6">
                   {navigationLinks.map((item) => (
                     <Link
