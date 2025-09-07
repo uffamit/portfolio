@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from './ui/sheet';
@@ -13,8 +14,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between px-6 sm:px-8">
-        <Link href="/" className="font-headline text-2xl font-bold text-primary">
-          Amit Divekar
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/favicon.svg" alt="Amit Divekar Logo" width={32} height={32} />
+          <span className="sr-only">Amit Divekar</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navigationLinks.map((item) => (
@@ -40,11 +42,12 @@ export default function Header() {
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <SheetDescription className="sr-only">A list of links to navigate the site.</SheetDescription>
                 <div className="flex items-center justify-between border-b pb-4">
-                     <Link href="/" className="font-headline text-xl font-bold text-primary">
-                        Amit Divekar
+                     <Link href="/" className="flex items-center gap-2">
+                        <Image src="/favicon.svg" alt="Amit Divekar Logo" width={28} height={28} />
+                         <span className="font-headline text-xl font-bold text-primary">Amit Divekar</span>
                     </Link>
                     <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon">
+                        <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)}>
                             <X className="h-6 w-6" />
                             <span className="sr-only">Close Menu</span>
                         </Button>
