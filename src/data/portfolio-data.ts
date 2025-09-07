@@ -115,11 +115,17 @@ export const certificationsData = [
 export const skillsData = {
   technical: [
     "Python", "JavaScript", "HTML", "CSS", "React.js", "Flask",
-    "Node.js", "SQL", "API Integration", "Frontend & Backend Development"
+    "Node.js", "SQL", "API Integration", "Frontend & Backend Development",
+    "TypeScript", "Next.js", "MongoDB", "Express.js", "Tailwind CSS",
+    "Framer Motion", "Git", "C++", "Pandas", "NumPy", "AWS",
+    "Cybersecurity Fundamentals", "Agile Methodologies", "Data Structures",
+    "Database Management", "UI/UX Design"
   ],
   soft: [
     "Teamwork", "Time Management", "Presentations",
-    "Documentation", "Cross-Team Collaboration", "Problem Solving"
+    "Documentation", "Cross-Team Collaboration", "Problem Solving",
+    "Adaptability", "Critical Thinking", "Creativity",
+    "Attention to Detail", "Leadership", "Research Skills"
   ]
 };
 
