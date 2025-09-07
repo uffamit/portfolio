@@ -9,8 +9,8 @@ export default function About() {
       <div className="w-full space-y-12">
         <div className="text-center">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">About Me</h2>
-          <p className="text-lg text-muted-foreground mt-2">
-            My education, passions, and personal interests.
+          <p className="text-lg text-muted-foreground mt-2 max-w-4xl mx-auto">
+            {aboutData.bio}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -41,8 +41,8 @@ export default function About() {
             <CardContent>
               <ul className="space-y-3 list-inside">
                 {aboutData.hobbies.map((hobby) => (
-                  <li key={hobby} className="flex items-center gap-3">
-                     <span className="h-2 w-2 rounded-full bg-primary" />
+                  <li key={hobby} className="flex items-start gap-3">
+                     <span className="h-2 w-2 rounded-full bg-primary mt-2.5 shrink-0" />
                     <span>{hobby}</span>
                   </li>
                 ))}

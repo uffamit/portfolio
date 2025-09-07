@@ -11,6 +11,9 @@ const ParticleBackground = () => {
 
     const currentMount = mountRef.current;
 
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 1500 : 5000;
+
     // Scene
     const scene = new THREE.Scene();
 
@@ -25,7 +28,6 @@ const ParticleBackground = () => {
     currentMount.appendChild(renderer.domElement);
 
     // Particles
-    const particleCount = 5000;
     const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
