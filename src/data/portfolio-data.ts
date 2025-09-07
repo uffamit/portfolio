@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import { Github, Linkedin, Mail, Smartphone, Dribbble, Twitter } from 'lucide-react';
 
@@ -14,7 +15,7 @@ export const navigationLinks = [
 export const heroData = {
   name: "Amit Divekar",
   title: "B.Sc. Computer Science Student",
-  bio: "A dedicated and flexible B.Sc. Computer Science student with a desire to learn, seeking to begin a career with a company where I can add value through customer success, business growth, and excellent service. I have practical experience in teamwork, digital solutioning, and professional communication.",
+  bio: "I’m Amit Divekar, a passionate B.Sc. Computer Science student at Savitribai Phule Pune University, driven by a curiosity for technology and a commitment to creating impactful digital solutions. With a strong foundation in software and web development, I thrive in collaborative environments, leveraging my skills in Python, JavaScript, React.js, and more to build innovative applications. My virtual experiences at Electronic Arts and Accenture UK have honed my ability to tackle complex problems, optimize code, and communicate effectively with stakeholders. I’m eager to join a dynamic team where I can contribute to customer success, drive business growth, and deliver exceptional value through creativity and technical expertise.",
   contactLink: "#contact"
 };
 
