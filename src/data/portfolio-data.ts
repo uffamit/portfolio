@@ -119,7 +119,7 @@ export const skillsData = {
     "TypeScript", "Next.js", "MongoDB", "Express.js", "Tailwind CSS",
     "Framer Motion", "Git", "C", "Pandas", "NumPy", "AWS",
     "Cybersecurity Fundamentals", "Agile Methodologies", "Data Structures",
-    "Database Management", "UI/UX Design"
+    "Database Management", "UI/UX Design", "DBMS"
   ],
   soft: [
     "Teamwork", "Time Management", "Presentations",
