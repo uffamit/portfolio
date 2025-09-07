@@ -44,7 +44,7 @@ export const experienceData = [
     company: "Electronic Arts (EA)",
     role: "Software Engineering Virtual Experience",
     duration: "Completed: Feb 2024",
-    description: "Crafted a feature proposal, designed a C++ class diagram, and fixed a significant bug in the EA Sports College Football codebase, enhancing performance by integrating a more efficient data structure."
+    description: "Crafted a feature proposal, designed a C class diagram, and fixed a significant bug in the EA Sports College Football codebase, enhancing performance by integrating a more efficient data structure."
   },
   {
     company: "Accenture UK",
@@ -117,7 +117,7 @@ export const skillsData = {
     "Python", "JavaScript", "HTML", "CSS", "React.js", "Flask",
     "Node.js", "SQL", "API Integration", "Frontend & Backend Development",
     "TypeScript", "Next.js", "MongoDB", "Express.js", "Tailwind CSS",
-    "Framer Motion", "Git", "C++", "Pandas", "NumPy", "AWS",
+    "Framer Motion", "Git", "C", "Pandas", "NumPy", "AWS",
     "Cybersecurity Fundamentals", "Agile Methodologies", "Data Structures",
     "Database Management", "UI/UX Design"
   ],
