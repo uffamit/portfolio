@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { projectsData } from '@/data/portfolio-data';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
 export default function Projects() {
   return (
@@ -29,13 +29,21 @@ export default function Projects() {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="flex gap-2">
                 <Button asChild variant="outline" className="w-full">
                   <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
-                    View on GitHub
+                    GitHub
                   </Link>
                 </Button>
+                {project.liveLink && (
+                  <Button asChild className="w-full">
+                    <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </Link>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}

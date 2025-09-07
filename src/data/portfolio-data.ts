@@ -55,7 +55,8 @@ export const projectsData = [
     title: "Password Strength Checker",
     description: "A web-based tool to assess the strength of passwords based on various criteria like length, character types, and common patterns.",
     technologies: ["JavaScript", "HTML", "CSS"],
-    githubLink: "https://github.com/Amit-Divekar/Password-Strength-Checker"
+    githubLink: "https://github.com/Amit-Divekar/Password-Strength-Checker",
+    liveLink: "https://password-strength-checker-nine-mu.vercel.app/"
   },
   {
     title: "2FA Password Protector",
@@ -84,6 +85,26 @@ export const projectsData = [
 ];
 
 export const certificationsData = [
+    {
+    title: "Software Engineering",
+    issuer: "Electronic Arts (EA)",
+    skills: ["Game Engine Technology", "Data Structures", "Future Design", "Object Oriented Design"]
+  },
+  {
+    title: "Developer and Technology",
+    issuer: "Accenture UK & Ireland",
+    skills: ["Agile & Waterfall Methodologies"]
+  },
+    {
+    title: "Career Essentials in Cybersecurity",
+    issuer: "Microsoft and LinkedIn",
+    skills: ["Threat & Vulnerability Management", "Cybersecurity", "Information Security Awareness"]
+  },
+    {
+    title: "Google Analytics Certification",
+    issuer: "Google",
+    skills: ["Analytical Skills", "Google Analytics"]
+  },
   {
     title: "Introduction to Cybersecurity",
     issuer: "Cisco",
@@ -118,7 +139,7 @@ export const skillsData = {
 };
 
 export const socialLinks = {
-  github: "https://github.com/Amit-Divekar",
-  linkedin: "https://www.linkedin.com/in/amit-divekar-",
+  github: "https://github.com/uffamit",
+  linkedin: "https://www.linkedin.com/in/divekar-amit",
   email: "amitdivekar@example.com"
 };
