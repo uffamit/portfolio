@@ -12,7 +12,7 @@ const ParticleBackground = () => {
     const currentMount = mountRef.current;
 
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 500 : 5000; // Reduced from 1500 to 500 for mobile
+    const particleCount = isMobile ? 200 : 5000;
 
     // Scene
     const scene = new THREE.Scene();
