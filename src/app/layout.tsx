@@ -5,6 +5,9 @@ import { Toaster } from '@/components/ui/toaster';
 export const metadata: Metadata = {
   title: 'Amit Divekar | Portfolio',
   description: "Amit Divekar's personal portfolio website.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
