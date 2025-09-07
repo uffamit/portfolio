@@ -4,83 +4,87 @@ import { Github, Linkedin, Mail, Smartphone, Dribbble, Twitter } from 'lucide-re
 export const navigationLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience'},
   { href: '#projects', label: 'Projects' },
   { href: '#certifications', label: 'Certifications' },
+  { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
 ];
 
 export const heroData = {
   name: "Amit Divekar",
   title: "B.Sc. Computer Science Student",
-  bio: "A dedicated and passionate B.Sc. Computer Science student at Savitribai Phule Pune University (SPPU), with a strong foundation in software development and a keen interest in creating innovative solutions. Eager to apply my skills in a challenging and dynamic work environment.",
+  bio: "A dedicated and flexible B.Sc. Computer Science student with a desire to learn, seeking to begin a career with a company where I can add value through customer success, business growth, and excellent service. I have practical experience in teamwork, digital solutioning, and professional communication.",
   contactLink: "#contact"
 };
 
 export const aboutData = {
   education: {
-    institution: "K.P.G. College",
+    institution: "K.P.G. Arts, Commerce, and Science College",
     degree: "B.Sc. in Computer Science",
     duration: "2021 - 2024",
-    cgpa: "CGPA: 8.5/10",
+    cgpa: "CGPA: 8.36/10.0",
     courses: [
-      "Data Structures & Algorithms", "Object-Oriented Programming",
-      "Database Management Systems", "Web Development", "Software Engineering"
+      "Programming Fundamentals", "Data Structures and Algorithms", 
+      "Database Management Systems", "Computer Networks", "Operating Systems"
     ]
   },
   hobbies: [
-    "Coding & Problem Solving",
-    "Exploring new technologies",
-    "Reading tech blogs",
-    "Open-source contribution"
+    "Web and software development",
+    "Solving puzzles and logic games like Chess",
+    "Digital art, illustration, and concept design",
+    "UI/UX and animation design",
+    "Exploring new digital tools for productivity"
   ]
 };
 
 export const experienceData = [
   {
     company: "Electronic Arts (EA)",
-    role: "Virtual Experience",
-    duration: "Jun 2023 - Jul 2023",
-    description: "Completed a virtual experience program focusing on game development principles and software engineering practices within the gaming industry. Contributed to a simulated project involving gameplay mechanics and bug fixing."
+    role: "Software Engineering Virtual Experience",
+    duration: "Completed: Feb 2024",
+    description: "Crafted a feature proposal, designed a C++ class diagram, and fixed a significant bug in the EA Sports College Football codebase, enhancing performance by integrating a more efficient data structure."
   },
   {
     company: "Accenture UK",
-    role: "Virtual Experience",
-    duration: "May 2023 - Jun 2023",
-    description: "Participated in a virtual program simulating a real-world software development lifecycle. Gained insights into Agile methodologies, requirements gathering, and delivering solutions for enterprise-level clients."
+    role: "Developer and Technology Virtual Experience",
+    duration: "Completed: Dec 2023",
+    description: "Gained a thorough understanding of the SDLC, researched emerging tech trends like DevOps, compared Waterfall vs. Agile, and designed/optimized a Python program to improve functionality."
   }
 ];
 
 export const projectsData = [
   {
-    title: "Password Strength Checker",
-    description: "A web-based tool to assess the strength of passwords based on various criteria like length, character types, and common patterns.",
-    technologies: ["JavaScript", "HTML", "CSS"],
-    githubLink: "https://github.com/Amit-Divekar/Password-Strength-Checker",
-    liveLink: "https://password-strength-checker-nine-mu.vercel.app/"
+    title: "Eatinformed",
+    description: "An AI-driven platform for instant nutrition analysis from food label images, built with Next.js, Genkit, and Google Gemini, featuring a modern UI with Tailwind CSS.",
+    technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Genkit", "Gemini"],
+    githubLink: "https://github.com/uffamit/Eatinformed",
+    liveLink: "https://eatinformed-eosin.vercel.app"
   },
   {
     title: "2FA Password Protector",
-    description: "A security-focused application that implements two-factor authentication to protect user credentials.",
-    technologies: ["Python", "Flask", "Twilio API"],
-    githubLink: "https://github.com/Amit-Divekar/2FA-Password-Protector"
+    description: "A Flask-based authentication system with three layers of security: login, PIN, and Two-Factor Authentication (2FA), using SQLite and cryptography for secure data handling.",
+    technologies: ["Python", "Flask", "SQLite", "Cryptography"],
+    githubLink: "https://github.com/uffamit/2FA-Password-Protector"
   },
   {
     title: "Cloud File Uploader",
-    description: "A service that allows users to securely upload and manage files in a cloud storage environment.",
-    technologies: ["Node.js", "Express", "AWS S3"],
-    githubLink: "https://github.com/Amit-Divekar/Cloud-File-Uploader"
+    description: "A secure file storage system similar to Google Drive, developed with Node.js and SQLite, allowing users to store and manage files efficiently in a cloud-based environment.",
+    technologies: ["Node.js", "SQLite"],
+    githubLink: "https://github.com/uffamit/Cloud-File-Uploader"
   },
-  {
+    {
     title: "Anime Viewing Platform",
-    description: "A full-stack platform for streaming and discovering anime, featuring user accounts and watchlists.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubLink: "https://github.com/Amit-Divekar/Anime-Viewing-Platform"
+    description: "A responsive Flask-based website for streaming copyright-free anime, ensuring a smooth user experience with dynamic content loading and an intuitive UI.",
+    technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+    githubLink: "https://github.com/uffamit/Anime-Viewing-Platform"
   },
   {
-    title: "Eatinformed",
-    description: "A mobile-friendly web app providing nutritional information and allergen alerts for food products.",
-    technologies: ["Vue.js", "Firebase", "Edamam API"],
-    githubLink: "https://github.com/Amit-Divekar/Eatinformed"
+    title: "Password Strength Checker",
+    description: "A web-based tool to assess the strength of passwords based on various criteria like length, character types, and common patterns.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    githubLink: "https://github.com/uffamit/Password-Strength-Checker",
+    liveLink: "https://password-strength-checker-nine-mu.vercel.app/"
   }
 ];
 
@@ -92,7 +96,7 @@ export const certificationsData = [
   },
   {
     title: "Developer and Technology",
-    issuer: "Accenture UK & Ireland",
+    issuer: "Accenture UK",
     skills: ["Agile & Waterfall Methodologies"]
   },
     {
@@ -104,42 +108,22 @@ export const certificationsData = [
     title: "Google Analytics Certification",
     issuer: "Google",
     skills: ["Analytical Skills", "Google Analytics"]
-  },
-  {
-    title: "Introduction to Cybersecurity",
-    issuer: "Cisco",
-    skills: ["Cybersecurity Fundamentals", "Threat Analysis"]
-  },
-  {
-    title: "Python for Data Science",
-    issuer: "IBM",
-    skills: ["Python", "Pandas", "NumPy", "Data Analysis"]
-  },
-  {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    skills: ["Cloud Concepts", "AWS Services", "Security", "Billing"]
-  },
-  {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    skills: ["HTML5", "CSS3", "Flexbox", "CSS Grid"]
   }
 ];
 
 export const skillsData = {
   technical: [
-    "JavaScript (ES6+)", "TypeScript", "React", "Next.js", "Node.js",
-    "Python", "Java", "HTML5 & CSS3", "SQL", "MongoDB", "Git & GitHub", "REST APIs", "Docker"
+    "Python", "JavaScript", "HTML", "CSS", "React.js", "Flask",
+    "Node.js", "SQL", "API Integration", "Frontend & Backend Development"
   ],
   soft: [
-    "Problem Solving", "Team Collaboration", "Communication",
-    "Agile Methodologies", "Time Management", "Adaptability"
+    "Teamwork", "Time Management", "Presentations",
+    "Documentation", "Cross-Team Collaboration", "Problem Solving"
   ]
 };
 
 export const socialLinks = {
   github: "https://github.com/uffamit",
   linkedin: "https://www.linkedin.com/in/divekar-amit",
-  email: "amitdivekar@example.com"
+  email: "Amitdivekar289@gmail.com"
 };
