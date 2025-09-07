@@ -12,7 +12,7 @@ const ParticleBackground = () => {
     const currentMount = mountRef.current;
 
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 1500 : 5000;
+    const particleCount = isMobile ? 500 : 5000; // Reduced from 1500 to 500 for mobile
 
     // Scene
     const scene = new THREE.Scene();
@@ -22,7 +22,7 @@ const ParticleBackground = () => {
     camera.position.z = 5;
 
     // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: !isMobile, alpha: true }); // Disable antialias on mobile
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
@@ -51,6 +51,7 @@ const ParticleBackground = () => {
     // Mouse
     const mouse = new THREE.Vector2();
     const onMouseMove = (event: MouseEvent) => {
+        if (isMobile) return;
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
     };
@@ -61,40 +62,32 @@ const ParticleBackground = () => {
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
 
-      // Update particles
+      // Update particles rotation
       particleSystem.rotation.y = elapsedTime * 0.05;
       particleSystem.rotation.x = elapsedTime * 0.02;
 
       const positions = particleSystem.geometry.attributes.position.array as Float32Array;
-
-      for (let i = 0; i < particleCount; i++) {
-        const i3 = i * 3;
-        const x = positions[i3];
-        const y = positions[i3 + 1];
-        
-        // Simple wave effect
-        positions[i3 + 1] = y + Math.sin(elapsedTime + x) * 0.001;
-
-      }
       particleSystem.geometry.attributes.position.needsUpdate = true;
 
 
-      // Repel from cursor
-      const raycaster = new THREE.Raycaster();
-      raycaster.setFromCamera(mouse, camera);
-      const direction = raycaster.ray.direction.multiplyScalar(10);
-      
-      for (let i = 0; i < particleCount; i++) {
-        const i3 = i * 3;
-        const particlePosition = new THREE.Vector3(positions[i3], positions[i3+1], positions[i3+2]);
-        const distance = particlePosition.distanceTo(direction);
+      // Repel from cursor (only on desktop)
+      if (!isMobile) {
+        const raycaster = new THREE.Raycaster();
+        raycaster.setFromCamera(mouse, camera);
+        const direction = raycaster.ray.direction.multiplyScalar(10);
+        
+        for (let i = 0; i < particleCount; i++) {
+          const i3 = i * 3;
+          const particlePosition = new THREE.Vector3(positions[i3], positions[i3+1], positions[i3+2]);
+          const distance = particlePosition.distanceTo(direction);
 
-        if (distance < 0.5) {
-            const force = (0.5 - distance) * 0.05;
-            const repel = particlePosition.clone().sub(direction).normalize().multiplyScalar(force);
-            positions[i3] += repel.x;
-            positions[i3+1] += repel.y;
-            positions[i3+2] += repel.z;
+          if (distance < 0.5) {
+              const force = (0.5 - distance) * 0.05;
+              const repel = particlePosition.clone().sub(direction).normalize().multiplyScalar(force);
+              positions[i3] += repel.x;
+              positions[i3+1] += repel.y;
+              positions[i3+2] += repel.z;
+          }
         }
       }
 
