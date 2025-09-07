@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { socialLinks } from '@/data/portfolio-data';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
-import ContactForm from './contact-form';
+import MailtoForm from './mailto-form';
 
 export default function Contact() {
   return (
@@ -19,10 +19,10 @@ export default function Contact() {
             <Card className="bg-card border-border/50">
                 <CardHeader>
                     <CardTitle className="font-headline text-2xl">Send me a message</CardTitle>
-                    <CardDescription>I'll get back to you as soon as possible.</CardDescription>
+                    <CardDescription>This will open your default email client.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <ContactForm />
+                    <MailtoForm email={socialLinks.email} />
                 </CardContent>
             </Card>
           </div>
