@@ -1,1 +1,1 @@
-Please place your resume file named 'Amit_Divekar_Resume.pdf' in this directory.
+Please upload your resume PDF file in this directory and name it "Amit_Divekar_Resume.pdf". You can then delete this placeholder file.
