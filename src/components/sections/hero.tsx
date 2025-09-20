@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { heroData } from '@/data/portfolio-data';
+import { heroData, socialLinks } from '@/data/portfolio-data';
 
 export default function Hero() {
   return (
@@ -27,6 +27,12 @@ export default function Hero() {
             <Link href="/doc/Amit_Divekar_Resume.pdf" target="_blank" download>
               Download Resume
               <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
+            </Link>
+          </Button>
+           <Button asChild size="lg" className="group">
+            <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+              GitHub Profile
+              <Github className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>
