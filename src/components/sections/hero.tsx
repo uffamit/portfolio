@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { heroData } from '@/data/portfolio-data';
 
@@ -16,12 +16,20 @@ export default function Hero() {
         <p className="max-w-3xl text-lg text-foreground/80 leading-relaxed">
           {heroData.bio}
         </p>
-        <Button asChild size="lg" className="mt-4 group">
-          <Link href={heroData.contactLink}>
-            Get in Touch
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+          <Button asChild size="lg" className="group">
+            <Link href={heroData.contactLink}>
+              Get in Touch
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="group">
+            <Link href="/doc/Amit_Divekar_Resume.pdf" target="_blank" download>
+              Download Resume
+              <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
