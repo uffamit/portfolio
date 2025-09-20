@@ -1,0 +1,9 @@
+# Allow all legitimate crawlers to access public pages, block sensitive paths
+     User-agent: *
+     Allow: /
+     Disallow: /admin
+     Disallow: /login
+     Disallow: /wp-admin
+     Disallow: /api/
+     Sitemap: https://amitdivekar.qzz.io/sitemap.xml
+     Host: amitdivekar.qzz.io
