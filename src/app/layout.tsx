@@ -2,9 +2,22 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
+const siteUrl = 'https://amitdivekar.qzz.io';
+
 export const metadata: Metadata = {
   title: 'Amit Divekar - Portfolio',
   description: "Amit Divekar's personal portfolio website, showcasing projects and skills in web development and computer science.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    title: 'Amit Divekar - Portfolio',
+    description: "Amit Divekar's personal portfolio website.",
+    siteName: 'Amit Divekar Portfolio',
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
   icons: {
     icon: '/favicon.svg',
   },

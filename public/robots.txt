@@ -1,9 +1,7 @@
-# Allow all legitimate crawlers to access public pages, block sensitive paths
-     User-agent: *
-     Allow: /
-     Disallow: /admin
-     Disallow: /login
-     Disallow: /wp-admin
-     Disallow: /api/
-     Sitemap: https://amitdivekar.qzz.io/sitemap.xml
-     Host: amitdivekar.qzz.io
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# To allow most search engines to crawl your site, use:
+User-agent: *
+Allow: /
+
+Sitemap: https://amitdivekar.qzz.io/sitemap.xml
