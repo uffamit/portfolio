@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Amit Divekar | Portfolio',
-  description: "Amit Divekar's personal portfolio website.",
+  title: 'Amit Divekar - Portfolio',
+  description: "Amit Divekar's personal portfolio website, showcasing projects and skills in web development and computer science.",
   icons: {
     icon: '/favicon.svg',
   },
