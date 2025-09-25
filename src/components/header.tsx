@@ -15,7 +15,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between px-6 sm:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/favicon.svg" alt="Amit Divekar Logo" width={32} height={32} />
+          <Image src="/favicon.ico" alt="Amit Divekar Logo" width={32} height={32} />
           <span className="sr-only">Amit Divekar</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -43,7 +43,7 @@ export default function Header() {
                 <SheetDescription className="sr-only">A list of links to navigate the site.</SheetDescription>
                 <div className="flex items-center justify-between border-b pb-4">
                      <Link href="/" className="flex items-center gap-2">
-                        <Image src="/favicon.svg" alt="Amit Divekar Logo" width={28} height={28} />
+                        <Image src="/favicon.ico" alt="Amit Divekar Logo" width={28} height={28} />
                          <span className="font-headline text-xl font-bold text-primary">Amit Divekar</span>
                     </Link>
                     <SheetTrigger asChild>
