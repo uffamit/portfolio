@@ -1,11 +1,19 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="256" height="256" fill="url(#paint0_linear_1_2)"/>
-<path d="M188 54V122.067L128.846 64H103.8L163 122.2V202H188V54Z" fill="white"/>
-<path d="M68 202V133.933L127.154 192H152.2L93 133.8V54H68V202Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_1_2" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
-<stop stop-color="#A855F7"/>
-<stop offset="1" stop-color="#6366F1"/>
-</linearGradient>
-</defs>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700');
+    </style>
+  </defs>
+  <rect width="100" height="100" rx="16" ry="16" fill="hsl(224 71% 4%)" />
+  <text 
+    x="50%" 
+    y="50%" 
+    dominant-baseline="central" 
+    text-anchor="middle" 
+    font-family="'Space Grotesk', sans-serif"
+    font-size="50" 
+    font-weight="bold" 
+    fill="hsl(300 17% 70%)">
+    AD
+  </text>
 </svg>
