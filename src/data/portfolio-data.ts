@@ -9,6 +9,7 @@ export const navigationLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#certifications', label: 'Certifications' },
   { href: '#skills', label: 'Skills' },
+  { href: '/notes', label: 'Notes' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -20,6 +21,7 @@ export const heroData = {
 };
 
 export const aboutData = {
+  bio: "My name is Amit Divekar, and I'm a passionate B.Sc. Computer Science student at Savitribai Phule Pune University, driven by a curiosity for technology and a commitment to creating impactful digital solutions.",
   education: {
     institution: "K.P.G. Arts, Commerce, and Science College",
     degree: "B.Sc. in Computer Science",
