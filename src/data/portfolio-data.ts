@@ -3,14 +3,14 @@ import type { LucideIcon } from 'lucide-react';
 import { Github, Linkedin, Mail, Smartphone, Dribbble, Twitter } from 'lucide-react';
 
 export const navigationLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience'},
-  { href: '#projects', label: 'Projects' },
-  { href: '#certifications', label: 'Certifications' },
-  { href: '#skills', label: 'Skills' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience'},
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#certifications', label: 'Certifications' },
+  { href: '/#skills', label: 'Skills' },
   { href: '/notes', label: 'Notes' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export const heroData = {
