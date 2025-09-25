@@ -36,6 +36,9 @@ export default function NotesPage() {
               </div>
             </CardContent>
           </Card>
+          <p className="text-center text-sm text-destructive mt-4">
+            For educational purposes only. The owner of this site is not responsible for any misuse.
+          </p>
         </div>
       </main>
       <Footer />
