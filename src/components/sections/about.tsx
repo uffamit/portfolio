@@ -14,7 +14,7 @@ export default function About() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <Card className="bg-background/20 backdrop-blur-lg border-border/20 shadow-lg">
+          <Card className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
             <CardHeader className="flex flex-row items-center gap-4">
               <GraduationCap className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-2xl">Education</CardTitle>
@@ -33,7 +33,7 @@ export default function About() {
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-background/20 backdrop-blur-lg border-border/20 shadow-lg">
+          <Card className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
             <CardHeader className="flex flex-row items-center gap-4">
               <Sparkles className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-2xl">Hobbies & Interests</CardTitle>
