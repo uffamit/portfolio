@@ -18,7 +18,7 @@ export default function NotesPage() {
           </p>
         </div>
         <div className="max-w-2xl mx-auto">
-          <Card className="bg-background/20 backdrop-blur-lg border-border/20 shadow-lg">
+          <Card className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">SYBSc CS Practicals</CardTitle>
             </CardHeader>
@@ -37,7 +37,7 @@ export default function NotesPage() {
             </CardContent>
           </Card>
           <p className="text-center text-sm text-destructive mt-4">
-            For educational purposes only. The owner of this site is not responsible for any misuse.
+            For educational purposes only. Any use in cheating or anything happened the IG group and owner of this site is not responsible.
           </p>
         </div>
       </main>
