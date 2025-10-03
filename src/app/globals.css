@@ -60,11 +60,5 @@ html {
   }
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background-image: linear-gradient(
-      to bottom right,
-      hsl(300 17% 70% / 0.8),
-      hsl(234 39% 79% / 0.8)
-    );
-    background-attachment: fixed;
   }
 }
