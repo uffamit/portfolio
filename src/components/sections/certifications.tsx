@@ -15,7 +15,7 @@ export default function Certifications() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {certificationsData.map((cert) => (
-            <Card key={cert.title} className="bg-background/20 backdrop-blur-lg border-border/20 shadow-lg">
+            <Card key={cert.title} className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
               <CardHeader className="flex flex-row items-start gap-4 space-y-0">
                 <div className="bg-primary/10 p-3 rounded-full">
                   <Award className="h-6 w-6 text-primary" />
