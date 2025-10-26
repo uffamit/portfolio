@@ -62,7 +62,7 @@ export const projectsData = [
     description: "An AI-driven platform for instant nutrition analysis from food label images, built with Next.js, Genkit, and Google Gemini, featuring a modern UI with Tailwind CSS.",
     technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Genkit", "Gemini"],
     githubLink: "https://github.com/uffamit/Eatinformed",
-    liveLink: "https://eatinformed-eosin.vercel.app"
+    liveLink: "https://eatinformed.amitdivekar.qzz.io"
   },
   {
     title: "2FA Password Protector",
