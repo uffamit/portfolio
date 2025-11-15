@@ -1,5 +1,7 @@
+
 import { Badge } from '@/components/ui/badge';
 import { skillsData } from '@/data/portfolio-data';
+import Image from 'next/image';
 
 export default function Skills() {
   return (
@@ -14,11 +16,20 @@ export default function Skills() {
         <div className="grid grid-cols-1 gap-8 md:gap-12">
           <div className="space-y-4">
             <h3 className="text-2xl font-headline font-semibold text-center">Technical Skills</h3>
-            <div className="flex flex-wrap justify-center gap-3 p-6 rounded-lg bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 p-6 rounded-lg bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
               {skillsData.technical.map((skill) => (
-                <Badge key={skill} className="text-sm px-4 py-2" variant="default">
-                  {skill}
-                </Badge>
+                <div key={skill.name} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-accent/50 w-24">
+                  <div className="relative h-12 w-12 flex items-center justify-center">
+                    <Image 
+                      src={skill.icon} 
+                      alt={`${skill.name} icon`} 
+                      width={40} 
+                      height={40}
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-sm font-medium text-center text-foreground/90">{skill.name}</p>
+                </div>
               ))}
             </div>
           </div>
