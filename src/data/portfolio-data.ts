@@ -16,12 +16,12 @@ export const navigationLinks = [
 export const heroData = {
   name: "Amit Divekar",
   title: "B.Sc. Computer Science Student",
-  bio: "My name is Amit Divekar, and I'm a passionate B.Sc. Computer Science student at Savitribai Phule Pune University, driven by a curiosity for technology and a commitment to creating impactful digital solutions. With a strong foundation in software and web development, I thrive in collaborative environments, leveraging my skills in Python, JavaScript, React.js, and more to build innovative applications. My virtual experiences at Electronic Arts and Accenture UK have honed my ability to tackle complex problems, optimize code, and communicate effectively with stakeholders. I’m eager to join a dynamic team where I can contribute to customer success, drive business growth, and deliver exceptional value through creativity and technical expertise.",
+  bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
   contactLink: "#contact"
 };
 
 export const aboutData = {
-  bio: "My name is Amit Divekar, and I'm a passionate B.Sc. Computer Science student at Savitribai Phule Pune University, driven by a curiosity for technology and a commitment to creating impactful digital solutions.",
+  bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
   education: {
     institution: "K.P.G. Arts, Commerce, and Science College",
     degree: "B.Sc. in Computer Science",
@@ -179,3 +179,6 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/divekar-amit",
   email: "Amitdivekar289@gmail.com"
 };
+
+
+    
