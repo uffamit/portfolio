@@ -17,20 +17,23 @@ export default function Skills() {
           <div className="space-y-4">
             <h3 className="text-2xl font-headline font-semibold text-center">Technical Skills</h3>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 p-6 rounded-lg bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
-              {skillsData.technical.map((skill) => (
-                <div key={skill.name} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-accent/50 w-24">
-                  <div className="relative h-12 w-12 flex items-center justify-center">
-                    <Image 
-                      src={skill.icon} 
-                      alt={`${skill.name} icon`} 
-                      width={40} 
-                      height={40}
-                      className="object-contain"
-                    />
+              {skillsData.technical.map((skill) => {
+                const isInvertable = ['Flask', 'Express.js', 'Framer Motion', 'Cybersecurity'].includes(skill.name);
+                return (
+                  <div key={skill.name} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-accent/50 w-24">
+                    <div className="relative h-12 w-12 flex items-center justify-center">
+                      <Image 
+                        src={skill.icon} 
+                        alt={`${skill.name} icon`} 
+                        width={40} 
+                        height={40}
+                        className={`object-contain ${isInvertable ? 'dark:invert-0 invert' : ''}`}
+                      />
+                    </div>
+                    <p className="text-sm font-medium text-center text-foreground/90">{skill.name}</p>
                   </div>
-                  <p className="text-sm font-medium text-center text-foreground/90">{skill.name}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           <div className="space-y-4">
