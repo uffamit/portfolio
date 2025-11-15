@@ -92,25 +92,41 @@ export const projectsData = [
 ];
 
 export const certificationsData = [
-    {
+  {
+    title: "IP Addressing and Subnetting",
+    issuer: "GeeksforGeeks",
+    skills: ["IP Addressing", "Subnetting", "Internet Protocol Suite (TCP/IP)", "Internet Protocol (IP)"],
+    link: "https://media.geeksforgeeks.org/courses/certificates/9f02af57d75cc46e928c771bfbcdfe62.pdf"
+  },
+  {
+    title: "Trust and Security with Google Cloud",
+    issuer: "Google",
+    skills: [],
+    link: "https://www.cloudskillsboost.google/public_profiles/40d340d4-c84b-4413-b630-69f4ba00ce20/badges/17592342"
+  },
+  {
     title: "Software Engineering",
     issuer: "Electronic Arts (EA)",
-    skills: ["Game Engine Technology", "Data Structures", "Future Design", "Object Oriented Design"]
+    skills: ["game engine technology", "Data Structures", "future design", "Object Oriented Design"],
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_iqBjeEZPS8ycoo8nH_1739022094480_completion_certificate.pdf"
   },
   {
     title: "Developer and Technology",
-    issuer: "Accenture UK",
-    skills: ["Agile & Waterfall Methodologies"]
+    issuer: "Accenture UK & Ireland",
+    skills: ["Agile & Waterfall Methodologies"],
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ovyvuqqNRQKBjNxbj/3xnZEj9kfpoQKW885_ovyvuqqNRQKBjNxbj_iqBjeEZPS8ycoo8nH_1735299487533_completion_certificate.pdf"
   },
-    {
+  {
     title: "Career Essentials in Cybersecurity",
     issuer: "Microsoft and LinkedIn",
-    skills: ["Threat & Vulnerability Management", "Cybersecurity", "Information Security Awareness"]
+    skills: ["Threat & Vulnerability Management", "Cybersecurity", "Information Security Awareness"],
+    link: "https://www.linkedin.com/learning/certificates/16c6ab131a12d6d3a28080405cb38e3101483950290ad29c6b5650840398a147"
   },
-    {
+  {
     title: "Google Analytics Certification",
     issuer: "Google",
-    skills: ["Analytical Skills", "Google Analytics"]
+    skills: ["Analytical Skills"],
+    link: "#"
   }
 ];
 
@@ -136,3 +152,4 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/divekar-amit",
   email: "Amitdivekar289@gmail.com"
 };
+
