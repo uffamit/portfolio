@@ -27,7 +27,7 @@ export default function Skills() {
                         alt={`${skill.name} icon`} 
                         width={40} 
                         height={40}
-                        className={`object-contain ${isInvertable ? 'dark:invert-0 invert' : ''}`}
+                        className={`object-contain ${isInvertable ? 'dark:invert' : ''}`}
                       />
                     </div>
                     <p className="text-sm font-medium text-center text-foreground/90">{skill.name}</p>
