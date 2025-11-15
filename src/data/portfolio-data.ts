@@ -96,37 +96,43 @@ export const certificationsData = [
     title: "IP Addressing and Subnetting",
     issuer: "GeeksforGeeks",
     skills: ["IP Addressing", "Subnetting", "Internet Protocol Suite (TCP/IP)", "Internet Protocol (IP)"],
-    link: "https://media.geeksforgeeks.org/courses/certificates/9f02af57d75cc46e928c771bfbcdfe62.pdf"
+    link: "https://media.geeksforgeeks.org/courses/certificates/9f02af57d75cc46e928c771bfbcdfe62.pdf",
+    companyLogo: "https://media.licdn.com/dms/image/v2/D560BAQFEl-c-MprDFQ/company-logo_100_100/company-logo_100_100/0/1735198653833/geeksforgeeks_logo?e=1764806400&v=beta&t=kU4Lpx3cwLfSFzfIOgbS7CTUs6BfL-IVk4ksBOyj1AA"
   },
   {
     title: "Trust and Security with Google Cloud",
     issuer: "Google",
     skills: [],
-    link: "https://www.cloudskillsboost.google/public_profiles/40d340d4-c84b-4413-b630-69f4ba00ce20/badges/17592342"
+    link: "https://www.cloudskillsboost.google/public_profiles/40d340d4-c84b-4413-b630-69f4ba00ce20/badges/17592342",
+    companyLogo: "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1764806400&v=beta&t=1sN7tYqjbxAQ__Nwqyq-kOBfYLCopCWGVXBQsjbzsa8"
   },
   {
     title: "Software Engineering",
     issuer: "Electronic Arts (EA)",
     skills: ["game engine technology", "Data Structures", "future design", "Object Oriented Design"],
-    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_iqBjeEZPS8ycoo8nH_1739022094480_completion_certificate.pdf"
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_iqBjeEZPS8ycoo8nH_1739022094480_completion_certificate.pdf",
+    companyLogo: "https://media.licdn.com/dms/image/v2/D4E0BAQGQxdnYoe0DZQ/company-logo_100_100/B4EZVJmsPmGgAU-/0/1740696634652/electronic_arts_logo?e=1764806400&v=beta&t=KdhCa-8chqxJAm3uXd4TeRextO-6-DPQX2AhPnwPMpY"
   },
   {
     title: "Developer and Technology",
     issuer: "Accenture UK & Ireland",
     skills: ["Agile & Waterfall Methodologies"],
-    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ovyvuqqNRQKBjNxbj/3xnZEj9kfpoQKW885_ovyvuqqNRQKBjNxbj_iqBjeEZPS8ycoo8nH_1735299487533_completion_certificate.pdf"
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ovyvuqqNRQKBjNxbj/3xnZEj9kfpoQKW885_ovyvuqqNRQKBjNxbj_iqBjeEZPS8ycoo8nH_1735299487533_completion_certificate.pdf",
+    companyLogo: "https://media.licdn.com/dms/image/v2/C4E0BAQF-MdoC0rwXuQ/company-logo_100_100/company-logo_100_100/0/1652887987433/accenture_uk_logo?e=1764806400&v=beta&t=N70hNDwnoaQxcNqiXitF1-4RiawbP67zkaTAgq2k2X8"
   },
   {
     title: "Career Essentials in Cybersecurity",
     issuer: "Microsoft and LinkedIn",
     skills: ["Threat & Vulnerability Management", "Cybersecurity", "Information Security Awareness"],
-    link: "https://www.linkedin.com/learning/certificates/16c6ab131a12d6d3a28080405cb38e3101483950290ad29c6b5650840398a147"
+    link: "https://www.linkedin.com/learning/certificates/16c6ab131a12d6d3a28080405cb38e3101483950290ad29c6b5650840398a147",
+    companyLogo: "https://media.licdn.com/dms/image/v2/D560BAQH32RJQCl3dDQ/company-logo_100_100/B56ZYQ0mrGGoAU-/0/1744038948046/microsoft_logo?e=1764806400&v=beta&t=iq9gHGORVsZscJlcBMyks3O1BZ1gOM6SpHqEdI6umKo"
   },
   {
     title: "Google Analytics Certification",
     issuer: "Google",
     skills: ["Analytical Skills"],
-    link: "#"
+    link: "#",
+    companyLogo: "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1764806400&v=beta&t=1sN7tYqjbxAQ__Nwqyq-kOBfYLCopCWGVXBQsjbzsa8"
   }
 ];
 
@@ -152,4 +158,3 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/divekar-amit",
   email: "Amitdivekar289@gmail.com"
 };
-
