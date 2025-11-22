@@ -25,7 +25,7 @@ export const aboutData = {
   education: {
     institution: "K.P.G. Arts, Commerce, and Science College",
     degree: "B.Sc. in Computer Science",
-    duration: "2021 - 2024",
+    duration: "2024 - 2027",
     cgpa: "CGPA: 8.36/10.0",
     courses: [
       "Programming Fundamentals", "Data Structures and Algorithms", 
