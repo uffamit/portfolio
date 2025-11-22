@@ -16,12 +16,12 @@ export const navigationLinks = [
 export const heroData = {
   name: "Amit Divekar",
   title: "B.Sc. Computer Science Student",
-  bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
+  bio: "Next.js Developer | Growing Skills in AI, DevOps, CI/CD & Cloud Infrastructure",
   contactLink: "#contact"
 };
 
 export const aboutData = {
-  bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
+  bio: "Next.js Developer | Growing Skills in AI, DevOps, CI/CD & Cloud Infrastructure",
   education: {
     institution: "K.P.G. Arts, Commerce, and Science College",
     degree: "B.Sc. in Computer Science",
