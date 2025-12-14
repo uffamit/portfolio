@@ -16,7 +16,7 @@ export const navigationLinks = [
 export const heroData = {
   name: "Amit Divekar",
   title: "Next.js Developer | Growing Skills in AI, DevOps, CI/CD & Cloud Infrastructure",
-  bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
+  bio: "I build, break, and fix things for fun!!",
   contactLink: "#contact"
 };
 
