@@ -24,7 +24,9 @@ export default function Home() {
           <Skills />
         </div>
       </main>
-      <Contact />
+      <div className="mt-24 sm:mt-32 md:mt-48">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );
