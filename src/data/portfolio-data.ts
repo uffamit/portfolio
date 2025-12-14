@@ -15,13 +15,13 @@ export const navigationLinks = [
 
 export const heroData = {
   name: "Amit Divekar",
-  title: "B.Sc. Computer Science Student",
+  title: "Next.js Developer | Growing Skills in AI, DevOps, CI/CD & Cloud Infrastructure",
   bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
   contactLink: "#contact"
 };
 
 export const aboutData = {
-  bio: "🎓 BSc CS Student | Next.js & DevOps Enthusiast | Exploring Cloud, CI/CD & Infrastructure | Learning in Public",
+  bio: "Next.js Developer | Growing Skills in AI, DevOps, CI/CD & Cloud Infrastructure",
   education: {
     institution: "Savitribai Phule Pune University",
     degree: "Bachelor's Degree in Computer Science",
@@ -132,6 +132,13 @@ export const certificationsData = [
     issuer: "Google",
     skills: ["Analytical Skills"],
     link: "#",
+    companyLogo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg"
+  },
+  {
+    title: "HackFest-Cert",
+    issuer: "GDG New Delhi",
+    skills: [],
+    link: "https://www.creadefy.com/verify/CERT-3635E29E-3AD6-49F4",
     companyLogo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg"
   }
 ];
