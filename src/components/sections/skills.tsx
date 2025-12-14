@@ -19,7 +19,7 @@ export default function Skills() {
             <h3 className="text-2xl font-headline font-semibold text-center">Technical Skills</h3>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 p-6 rounded-lg bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
               {skillsData.technical.map((skill) => {
-                const isInvertable = ['Flask', 'Express.js', 'Framer Motion', 'Cybersecurity'].includes(skill.name);
+                const isInvertable = ['Flask', 'Express.js', 'Framer Motion'].includes(skill.name);
                 return (
                   <div key={skill.name} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-white/10 w-24">
                     <div className="relative h-12 w-12 flex items-center justify-center">
@@ -28,7 +28,7 @@ export default function Skills() {
                         alt={`${skill.name} icon`} 
                         width={40} 
                         height={40}
-                        className={`object-contain ${isInvertable ? 'invert dark:invert-0' : ''}`}
+                        className={`object-contain ${isInvertable ? 'dark:invert' : ''}`}
                       />
                     </div>
                     <p className="text-sm font-medium text-center text-foreground/90">{skill.name}</p>
