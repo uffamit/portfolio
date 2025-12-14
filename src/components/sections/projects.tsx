@@ -1,9 +1,10 @@
+
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { projectsData } from '@/data/portfolio-data';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, FileText } from 'lucide-react';
 
 export default function Projects() {
   return (
@@ -44,6 +45,14 @@ export default function Projects() {
                     </Link>
                   </Button>
                 )}
+                {project.docLink && (
+                  <Button asChild className="w-full">
+                    <Link href={project.docLink} target="_blank" rel="noopener noreferrer">
+                      <FileText className="mr-2 h-4 w-4" />
+                      Docs
+                    </Link>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}
@@ -52,3 +61,5 @@ export default function Projects() {
     </section>
   );
 }
+
+    

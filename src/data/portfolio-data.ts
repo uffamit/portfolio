@@ -62,7 +62,7 @@ export const projectsData = [
     description: "An advanced multi-agent system that reverse-engineers exam papers to decode professor psychology and generate optimized study strategies.",
     technologies: ["Python", "Software Development", "DevOps", "Git + GitHub", "Multi-agent AI", "Hub-and-Spoke architecture"],
     githubLink: "https://github.com/uffamit/Professor_Profiler",
-    liveLink: "https://deepwiki.com/uffamit/Professor_Profiler"
+    docLink: "https://deepwiki.com/uffamit/Professor_Profiler"
   },
   {
     title: "Eatinformed",
@@ -196,4 +196,6 @@ export const socialLinks = {
 
 
     
+    
+
     
