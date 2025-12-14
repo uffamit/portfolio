@@ -1,4 +1,5 @@
 
+
 import { Badge } from '@/components/ui/badge';
 import { skillsData } from '@/data/portfolio-data';
 import Image from 'next/image';
@@ -20,7 +21,7 @@ export default function Skills() {
               {skillsData.technical.map((skill) => {
                 const isInvertable = ['Flask', 'Express.js', 'Framer Motion', 'Cybersecurity'].includes(skill.name);
                 return (
-                  <div key={skill.name} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-accent/50 w-24">
+                  <div key={skill.name} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-foreground/10 w-24">
                     <div className="relative h-12 w-12 flex items-center justify-center">
                       <Image 
                         src={skill.icon} 
