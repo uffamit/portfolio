@@ -58,6 +58,13 @@ export const experienceData = [
 
 export const projectsData = [
   {
+    title: "Professor Profiler",
+    description: "An advanced multi-agent system that reverse-engineers exam papers to decode professor psychology and generate optimized study strategies.",
+    technologies: ["Python", "Software Development", "DevOps", "Git + GitHub", "Multi-agent AI", "Hub-and-Spoke architecture"],
+    githubLink: "https://github.com/uffamit/Professor_Profiler",
+    liveLink: "https://deepwiki.com/uffamit/Professor_Profiler"
+  },
+  {
     title: "Eatinformed",
     description: "An AI-driven platform for instant nutrition analysis from food label images, built with Next.js, Genkit, and Google Gemini, featuring a modern UI with Tailwind CSS.",
     technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Genkit", "Gemini"],
