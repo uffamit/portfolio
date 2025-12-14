@@ -29,7 +29,7 @@ export default function Hero() {
               <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
             </Link>
           </Button>
-           <Button asChild size="lg" className="group">
+           <Button asChild size="lg" variant="outline" className="group">
             <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer">
               GitHub Profile
               <Github className="ml-2 h-5 w-5" />

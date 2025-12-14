@@ -25,10 +25,10 @@ export default function NotesPage() {
             <CardContent>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-muted-foreground">
-                  sybsc cs practical DS and DBMS(SQL)
+                  SYBSc CS practicals for Data Structures and DBMS (SQL).
                 </p>
                 <Button asChild className="group w-full sm:w-auto">
-                  <Link href="/doc/dsa_and_sql.pdf" target="_blank" download>
+                  <Link href="/doc/Amit_Divekar_Resume.pdf" target="_blank" download>
                     Download PDF
                     <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
                   </Link>
@@ -36,8 +36,8 @@ export default function NotesPage() {
               </div>
             </CardContent>
           </Card>
-          <p className="text-center text-sm text-destructive mt-4">
-            For educational purposes only. Any use in cheating or anything happened the IG group and owner of this site is not responsible.
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            For educational purposes only. The owner of this site is not responsible for any misuse.
           </p>
         </div>
       </main>
