@@ -97,7 +97,7 @@ export const certificationsData = [
     issuer: "GeeksforGeeks",
     skills: ["IP Addressing", "Subnetting", "Internet Protocol Suite (TCP/IP)", "Internet Protocol (IP)"],
     link: "https://media.geeksforgeeks.org/courses/certificates/9f02af57d75cc46e928c771bfbcdfe62.pdf",
-    companyLogo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/geeksforgeeks/geeksforgeeks-original.svg"
+    companyLogo: "https://www.svgrepo.com/show/330494/geeksforgeeks.svg"
   },
   {
     title: "Trust and Security with Google Cloud",
@@ -111,21 +111,21 @@ export const certificationsData = [
     issuer: "Electronic Arts (EA)",
     skills: ["game engine technology", "Data Structures", "future design", "Object Oriented Design"],
     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_iqBjeEZPS8ycoo8nH_1739022094480_completion_certificate.pdf",
-    companyLogo: "https://logo.clearbit.com/ea.com"
+    companyLogo: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Electronic-Arts-Logo.svg"
   },
   {
     title: "Developer and Technology",
     issuer: "Accenture UK & Ireland",
     skills: ["Agile & Waterfall Methodologies"],
     link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ovyvuqqNRQKBjNxbj/3xnZEj9kfpoQKW885_ovyvuqqNRQKBjNxbj_iqBjeEZPS8ycoo8nH_1735299487533_completion_certificate.pdf",
-    companyLogo: "https://logo.clearbit.com/accenture.com"
+    companyLogo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg"
   },
   {
     title: "Career Essentials in Cybersecurity",
     issuer: "Microsoft and LinkedIn",
     skills: ["Threat & Vulnerability Management", "Cybersecurity", "Information Security Awareness"],
     link: "https://www.linkedin.com/learning/certificates/16c6ab131a12d6d3a28080405cb38e3101483950290ad29c6b5650840398a147",
-    companyLogo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoft/microsoft-original.svg"
+    companyLogo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
   },
   {
     title: "Google Analytics Certification",
