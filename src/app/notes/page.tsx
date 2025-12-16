@@ -1,10 +1,46 @@
 
+import type { Metadata } from 'next';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download } from 'lucide-react';
 import Link from 'next/link';
+
+const pageUrl = 'https://amitdevx.tech/notes';
+
+export const metadata: Metadata = {
+  title: 'Notes | Amit Divekar',
+  description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    type: 'article',
+    url: pageUrl,
+    title: 'Notes | Amit Divekar',
+    description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
+    siteName: 'Amit Divekar Portfolio',
+    images: [
+      {
+        url: 'https://amitdevx.tech/favicon.svg',
+        width: 512,
+        height: 512,
+        alt: 'Amit Divekar logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Notes | Amit Divekar',
+    description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
+    images: ['https://amitdevx.tech/favicon.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function NotesPage() {
   return (
