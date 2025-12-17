@@ -1,13 +1,5 @@
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#b3a5c8" viewBox="0 0 100 100">
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <!-- AD: Amit Divekar branding -->
-  <style>
-    .text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 60px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  </style>
-  <text x="50" y="55" text-anchor="middle" dominant-baseline="middle" class="text">AD</text>
+  <rect width="100" height="100" fill="#0a0a0a" rx="20"/>
+  <text x="50" y="70" text-anchor="middle" fill="#b3a5c8" font-family="Arial, sans-serif" font-weight="700" font-size="60">AD</text>
 </svg>
