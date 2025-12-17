@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    'theme-color': '#b3a5c8',
+  },
 };
 
 export default function NotesPage() {

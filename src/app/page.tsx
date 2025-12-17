@@ -1,12 +1,24 @@
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import ParticleBackground from '@/components/particle-background';
 import Header from '@/components/header';
 import Hero from '@/components/sections/hero';
 import About from '@/components/sections/about';
 import Experience from '@/components/sections/experience';
-import Projects from '@/components/sections/projects';
-import Certifications from '@/components/sections/certifications';
-import Skills from '@/components/sections/skills';
-import Contact from '@/components/sections/contact';
+
+// Lazy load below-the-fold sections
+const Projects = dynamic(() => import('@/components/sections/projects'), {
+  loading: () => null,
+});
+const Certifications = dynamic(() => import('@/components/sections/certifications'), {
+  loading: () => null,
+});
+const Skills = dynamic(() => import('@/components/sections/skills'), {
+  loading: () => null,
+});
+const Contact = dynamic(() => import('@/components/sections/contact'), {
+  loading: () => null,
+});
 import Footer from '@/components/footer';
 
 export default function Home() {
@@ -19,13 +31,21 @@ export default function Home() {
           <Hero />
           <About />
           <Experience />
-          <Projects />
-          <Certifications />
-          <Skills />
+          <Suspense fallback={null}>
+            <Projects />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Certifications />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Skills />
+          </Suspense>
         </div>
       </main>
       <div className="mt-24 sm:mt-32 md:mt-48">
-        <Contact />
+        <Suspense fallback={null}>
+          <Contact />
+        </Suspense>
       </div>
       <Footer />
     </div>

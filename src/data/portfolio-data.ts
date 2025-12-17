@@ -191,7 +191,8 @@ export const skillsData = {
 export const socialLinks = {
   github: "https://github.com/uffamit",
   linkedin: "https://www.linkedin.com/in/divekar-amit",
-  email: "Amitdivekar289@gmail.com"
+  email: "Amitdivekar289@gmail.com",
+  x: "https://x.com/amitdevx_"
 };
 
 

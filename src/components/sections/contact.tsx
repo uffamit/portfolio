@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { socialLinks } from '@/data/portfolio-data';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, X } from 'lucide-react';
 import Link from 'next/link';
 import MailtoForm from './mailto-form';
 
@@ -40,6 +40,10 @@ export default function Contact() {
                  <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <Github className="h-6 w-6 text-primary" />
                     <span className="text-muted-foreground group-hover:text-foreground transition-colors">@uffamit</span>
+                </Link>
+                 <Link href={socialLinks.x} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                    <X className="h-6 w-6 text-primary" />
+                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">@amitdevx_</span>
                 </Link>
             </div>
           </div>
