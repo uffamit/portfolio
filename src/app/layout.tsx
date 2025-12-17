@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
+// Responsive viewport configuration with theme color
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,

@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, X } from 'lucide-react';
 import Link from 'next/link';
 import MailtoForm from './mailto-form';
 
+// Contact section with social links and email form
 export default function Contact() {
   return (
     <section id="contact" className="py-24 sm:py-32 bg-background">

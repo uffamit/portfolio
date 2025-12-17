@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const siteUrl = 'https://amitdevx.tech';
 
+// Dynamic sitemap generation for SEO
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 

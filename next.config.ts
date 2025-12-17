@@ -1,6 +1,7 @@
 
 import type {NextConfig} from 'next';
 
+// Next.js configuration with performance optimizations
 const nextConfig: NextConfig = {
   /* config options here */
   compress: true,

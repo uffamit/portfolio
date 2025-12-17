@@ -1,7 +1,8 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 #
-# To allow most search engines to crawl your site, use:
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
+# Dynamic sitemap for amitdevx.tech
 Sitemap: https://amitdevx.tech/sitemap.xml

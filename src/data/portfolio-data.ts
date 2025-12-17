@@ -1,7 +1,7 @@
-
 import type { LucideIcon } from 'lucide-react';
 import { Github, Linkedin, Mail, Smartphone, Dribbble, Twitter } from 'lucide-react';
 
+// Navigation and portfolio content configuration
 export const navigationLinks = [
   { href: '/#home', label: 'Home' },
   { href: '/#about', label: 'About' },

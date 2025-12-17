@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
@@ -7,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download } from 'lucide-react';
 import Link from 'next/link';
 
+// Notes page with downloadable resources
 const pageUrl = 'https://amitdevx.tech/notes';
 
 export const metadata: Metadata = {
