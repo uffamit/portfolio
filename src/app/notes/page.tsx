@@ -67,7 +67,7 @@ export default function NotesPage() {
                   SYBSc CS practicals for Data Structures and DBMS (SQL).
                 </p>
                 <Button asChild className="group w-full sm:w-auto">
-                  <Link href="/doc/Amit_Divekar_Resume.pdf" target="_blank" download>
+                  <Link href="/doc/dsa_and_sql.pdf.pdf" target="_blank" download>
                     Download PDF
                     <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
                   </Link>
