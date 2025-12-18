@@ -42,18 +42,12 @@ export default function Header() {
                <SheetHeader>
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <SheetDescription className="sr-only">A list of links to navigate the site.</SheetDescription>
-                <div className="flex items-center justify-between border-b pb-4">
-                     <Link href="/" className="flex items-center gap-2">
+                <div className="flex items-center gap-2 border-b pb-4">
+                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/favicon.svg" alt="AD" width="28" height="28" />
                          <span className="font-headline text-xl font-bold text-primary">Amit Divekar</span>
                     </Link>
-                    <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)}>
-                            <X className="h-6 w-6" />
-                            <span className="sr-only">Close Menu</span>
-                        </Button>
-                    </SheetTrigger>
                 </div>
               </SheetHeader>
               <div className="flex flex-col h-full">

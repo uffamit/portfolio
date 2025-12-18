@@ -25,7 +25,7 @@ export const aboutData = {
   education: {
     institution: "Savitribai Phule Pune University",
     degree: "Bachelor's Degree in Computer Science",
-    duration: "2021 - 2024",
+    duration: "2024 - 2027",
     cgpa: "CGPA: 8.36/10.0",
     courses: [
       "Programming Fundamentals", "Data Structures and Algorithms", 
@@ -69,7 +69,7 @@ export const projectsData = [
     description: "An AI-driven platform for instant nutrition analysis from food label images, built with Next.js, Genkit, and Google Gemini, featuring a modern UI with Tailwind CSS.",
     technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Genkit", "Gemini"],
     githubLink: "https://github.com/uffamit/Eatinformed",
-    liveLink: "https://eatinformed-eosin.vercel.app"
+    liveLink: "https://eatinformed.amitdevx.tech/"
   },
   {
     title: "2FA Password Protector",
@@ -81,7 +81,7 @@ export const projectsData = [
     title: "Cloud File Uploader",
     description: "A secure file storage system similar to Google Drive, developed with Node.js and SQLite, allowing users to store and manage files efficiently in a cloud-based environment.",
     technologies: ["Node.js", "SQLite"],
-    githubLink: "https://github.com/uffamit/Cloud-File-Uploader"
+    githubLink: "https://github.com/uffamit/FileFlow"
   },
     {
     title: "Anime Viewing Platform",
@@ -192,7 +192,8 @@ export const socialLinks = {
   github: "https://github.com/uffamit",
   linkedin: "https://www.linkedin.com/in/divekar-amit",
   email: "Amitdivekar289@gmail.com",
-  x: "https://x.com/amitdevx_"
+  x: "https://x.com/amitdevx_",
+  instagram: "https://instagram.com/amitdevx"
 };
 
 
