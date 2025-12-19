@@ -1,11 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "outputDirectory": ".next",
-  "regions": ["iad1"],
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -40,7 +34,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(jpg|jpeg|png|gif|ico|svg|webp|css|js))",
+      "source": "/:path*.(jpg|jpeg|png|gif|ico|svg|webp|css|js)",
       "headers": [
         {
           "key": "Cache-Control",
