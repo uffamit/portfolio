@@ -24,9 +24,30 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
+  
+  const siteUrl = 'https://amitdevx.tech';
+  
   return {
     title: `${post.title} | Amit Divekar`,
     description: post.description,
+    alternates: {
+      canonical: `${siteUrl}/blogs/${slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | Amit Divekar`,
+      description: post.description,
+      url: `${siteUrl}/blogs/${slug}`,
+      type: 'article',
+      publishedTime: post.date,
+      authors: ['Amit Divekar'],
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | Amit Divekar`,
+      description: post.description,
+      creator: '@divekar_amit',
+    },
   };
 }
 

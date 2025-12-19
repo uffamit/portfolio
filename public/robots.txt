@@ -3,6 +3,10 @@
 # Allow all search engines to crawl the site
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Preferred canonical domain
+Host: https://amitdevx.tech
 
 # Dynamic sitemap for amitdevx.tech
 Sitemap: https://amitdevx.tech/sitemap.xml

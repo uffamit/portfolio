@@ -11,6 +11,15 @@ import Footer from '@/components/footer';
 export const metadata = {
   title: "Blogs | Amit Divekar",
   description: "Blogs, project breakdowns, and tech tutorials.",
+  alternates: {
+    canonical: 'https://amitdevx.tech/blogs',
+  },
+  openGraph: {
+    title: "Blogs | Amit Divekar",
+    description: "Blogs, project breakdowns, and tech tutorials.",
+    url: 'https://amitdevx.tech/blogs',
+    type: 'website',
+  },
 };
 
 export default function BlogPage() {
