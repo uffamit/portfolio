@@ -1,0 +1,131 @@
+---
+title: "Reverse-Engineering Exams: A Deep Dive into Professor Profiler"
+date: "2025-12-19"
+description: "How we built a hierarchical multi-agent system with Google Gemini to decode professor psychology and optimize study strategies."
+tags: ["AI", "Multi-Agent Systems", "Gemini", "Python", "EdTech"]
+---
+
+# Reverse-Engineering Exams: A Deep Dive into Professor Profiler
+
+In the world of academia, the difference between a good grade and a great one often isn't just about how much you study—it's about studying the *right* things. Enter **Professor Profiler**, a Hierarchical Multi-Agent System (HMAS) designed to mimic the cognitive process of an expert tutor.
+
+By orchestrating specialized AI agents powered by **Google Gemini 2.5**, this tool doesn't just read exam papers; it reverse-engineers them to decode the psychology of the professor and formulate actionable study plans.
+
+## The Hub-and-Spoke Architecture
+
+Building a system that can "think" like a tutor requires more than a single prompt. We utilized a **Hub-and-Spoke architecture**, creating a directed acyclic graph (DAG) of agent execution managed by a central orchestrator.
+
+At the center sits the **Root Agent**, acting as the project manager. It delegates tasks to specialized sub-agents, ensuring that each part of the analysis is handled by an expert model suited for that specific cognitive load.
+
+```mermaid
+flowchart TD
+    subgraph Orchestration_Layer ["🧠 Orchestration Layer"]
+        Runner[<b>Runner</b><br/><i>State Management</i>]
+        Memory[(<b>Memory Bank</b><br/><i>JSON Persistence</i>)]
+    end
+
+    subgraph Agent_Layer ["🤖 Agent Hierarchy"]
+        Root[<b>ROOT AGENT</b><br/><i>Gemini 2.5 Pro</i><br/>The Project Manager]
+        
+        subgraph Workers ["Specialized Sub-Agents"]
+            Taxonomist[<b>Taxonomist</b><br/><i>Gemini Flash</i><br/>Classification]
+            Trend[<b>Trend Spotter</b><br/><i>Gemini Pro</i><br/>Analysis]
+            Strat[<b>Strategist</b><br/><i>Gemini Thinking</i><br/>Planning]
+        end
+    end
+
+    Runner --> Root
+    Root --Delegates--> Taxonomist
+    Root --Delegates--> Trend
+    Root --Delegates--> Strat
+````
+
+## Meet the Agents
+
+The system's power lies in its distinct agent personas, each utilizing a version of Gemini optimized for their specific role:
+
+1. **The Taxonomist (Classifier)**
+   Powered by `gemini-2.0-flash-exp` for speed, this agent acts as the meticulous grader. It reads every question and tags it with a topic and its Bloom's Taxonomy level (e.g., Analyze, Evaluate).
+
+2. **The Trend Spotter (Analyst)**
+   Using `gemini-2.0-pro-exp` for its large context window, this agent acts as the data scientist. It identifies frequency distributions and "curveball" questions that deviate from historical norms.
+
+3. **The Strategist (Coach)**
+   Leveraging the reasoning capabilities of `gemini-2.0-flash-thinking-exp`, this agent synthesizes the data to output the final **Safe Zones** (high reward, low effort) and **Drop Lists**.
+
+## From Raw PDF to Study Plan
+
+The execution pipeline transforms a raw exam PDF into a comprehensive report through four distinct phases: ingestion, classification, visualization, and strategy formulation.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Student
+    participant Root as 🧠 Root Agent
+    participant Tax as 🏷️ Taxonomist
+    participant Strat as 🎯 Strategist
+
+    Student->>Root: "Analyze Physics_2024.pdf"
+    
+    note right of Root: Phase 1 & 2: Classification
+    Root->>Tax: "Classify these questions"
+    Tax-->>Root: JSON List of Classified Questions
+
+    note right of Root: Phase 3: Visualization
+    Root->>Root: Generate Charts (Matplotlib)
+
+    note right of Root: Phase 4: Strategy
+    Root->>Strat: "Identify Safe Zones"
+    Strat-->>Root: Final Recommendations
+
+    Root-->>Student: Report + Images + Plan
+```
+
+## Built for Production
+
+We designed Professor Profiler not just as a demo, but as a reference implementation for production-grade agentic systems. Key technical features include:
+
+* **Observability**: Integrated structured logging with correlation IDs and distributed tracing to track requests across the agent hierarchy.
+* **State Management**: An in-memory session service that supports long-running operations, allowing the system to pause and resume analysis.
+* **Custom Tooling**: A robust tool layer handling PDF text extraction (`pypdf`) and dynamic visualization generation (`matplotlib`).
+
+## Try It Yourself
+
+The project creates a flexible foundation for any document analysis pipeline. Here is how you can initialize the runner and analyze a file programmatically:
+
+```python
+import asyncio
+from google.genai import types
+from profiler_agent.agent import root_agent
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+
+async def main():
+    # Initialize memory
+    session = InMemorySessionService()
+    
+    # Initialize runner
+    runner = Runner(agent=root_agent, session_service=session)
+    
+    # Execute
+    print("🤖 Agent is thinking...")
+    async for event in runner.run_async(
+        user_id="prof_user",
+        session_id="sess_01",
+        new_message=types.Content(
+            role="user",
+            parts=[types.Part.from_text("Analyze the midterms.")]
+        )
+    ):
+        if event.is_final_response():
+            print(f"\n🎓 Final Answer:\n{event.content.parts[0].text}")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+By combining the reasoning power of Large Language Models with structured cognitive architectures, **Professor Profiler** demonstrates that AI can be more than just a chatbot—it can be a strategic partner in learning.
+
+Explore the full source code and contribute to the project on GitHub: [Professor Profiler](https://github.com/uffamit/Professor_Profiler).
+
+🚀

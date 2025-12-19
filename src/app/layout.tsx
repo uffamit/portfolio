@@ -117,7 +117,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' }, // Fallback/Crawler preference
+      { url: '/favicon.svg', type: 'image/svg+xml' }, // High quality for modern tabs
     ],
     apple: '/favicon.svg',
   },

@@ -1,0 +1,148 @@
+import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Calendar, User } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import Image from "next/image";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Mermaid from "@/components/mermaid";
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+
+// 1. Generate Static Params for SEO (Pre-renders all blog pages)
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
+// 2. Dynamic SEO Metadata
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return { title: "Post Not Found" };
+  return {
+    title: `${post.title} | Amit Divekar`,
+    description: post.description,
+  };
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    <div className="relative overflow-x-hidden">
+      <Header />
+      <article className="min-h-screen pt-32 pb-20 px-4">
+        <div className="container mx-auto max-w-3xl">
+        
+        {/* Navigation */}
+        <Button asChild variant="ghost" className="mb-8 hover:bg-transparent hover:text-primary -ml-4">
+          <Link href="/blogs">
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blogs
+          </Link>
+        </Button>
+
+        {/* Article Header */}
+        <header className="mb-12 border-b border-border/40 pb-8 space-y-6">
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map(tag => (
+                <Badge key={tag} variant="secondary">{tag}</Badge>
+            ))}
+          </div>
+          
+          <h1 className="font-headline text-4xl md:text-5xl font-bold leading-tight">
+            {post.title}
+          </h1>
+          
+          <div className="flex items-center text-muted-foreground gap-6 text-sm font-mono">
+            <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                <time dateTime={post.date}>{post.date}</time>
+            </div>
+            <div className="flex items-center gap-2">
+                <User className="w-4 h-4" />
+                <span>Amit Divekar</span>
+            </div>
+          </div>
+        </header>
+        
+        {/* Article Content - Styled with Tailwind Typography */}
+        <div className="prose prose-lg prose-invert max-w-none 
+          prose-headings:font-headline prose-headings:font-bold prose-headings:text-foreground
+          prose-p:text-muted-foreground prose-p:leading-relaxed
+          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-foreground
+          prose-code:text-primary prose-code:bg-secondary/20 prose-code:px-1 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+          prose-pre:bg-card prose-pre:border prose-pre:border-border/50
+          prose-li:text-muted-foreground
+        ">
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm]}
+            components={{
+              // Image Handler
+              img: ({ node, ...props }) => {
+                // If the src starts with /, it's an internal image (use next/image)
+                if (props.src?.startsWith("/")) {
+                  return (
+                    <div className="relative w-full h-[400px] my-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                      <Image 
+                        src={props.src} 
+                        alt={props.alt || "Blog Image"} 
+                        fill 
+                        className="object-cover"
+                      />
+                    </div>
+                  );
+                }
+                // Fallback for external images (standard img tag)
+                // eslint-disable-next-line @next/next/no-img-element
+                return <img {...props} className="rounded-xl my-8 border border-white/10" alt={props.alt || ""} />;
+              },
+              
+              // Code Block Handler
+              code(props) {
+                const {children, className, node, ref, ...rest} = props
+                const match = /language-(\w+)/.exec(className || '')
+
+                // Mermaid diagrams
+                if (match && match[1] === 'mermaid') {
+                  return <Mermaid chart={String(children).trim()} />
+                }
+
+                // Syntax-highlighted code blocks
+                return match ? (
+                  <SyntaxHighlighter
+                    PreTag="div" // Wrap it in a div instead of pre to avoid hydration errors
+                    children={String(children).replace(/\n$/, '')}
+                    language={match[1]}
+                    style={dracula} // The theme
+                    className="rounded-lg !bg-[#1e1e2e] !p-4 border border-white/10 shadow-lg !my-6 text-sm md:text-base"
+                  />
+                ) : (
+                  // Inline code
+                  <code {...rest} className={`${className} bg-secondary/30 text-primary rounded px-1.5 py-0.5 font-mono text-sm`}>
+                    {children}
+                  </code>
+                )
+              }
+            }}
+          >
+            {post.content}
+          </ReactMarkdown>
+        </div>
+
+      </div>
+    </article>
+    <Footer />
+    </div>
+  );
+}
