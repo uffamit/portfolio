@@ -9,7 +9,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata = {
-  title: "Blogs | Amit Divekar",
+  title: "Blogs",
   description: "Blogs, project breakdowns, and tech tutorials.",
   alternates: {
     canonical: 'https://amitdevx.tech/blogs',

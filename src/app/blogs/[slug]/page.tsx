@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const siteUrl = 'https://amitdevx.tech';
   
   return {
-    title: `${post.title} | Amit Divekar`,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: `${siteUrl}/blogs/${slug}`,
@@ -44,9 +44,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} | Amit Divekar`,
+      title: post.title,
       description: post.description,
-      creator: '@divekar_amit',
+      creator: '@amitdevx_',
     },
   };
 }
@@ -109,24 +109,38 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             components={{
+              // Paragraph handler to prevent nested div in p tags
+              p: ({ node, children, ...props }) => {
+                // Check if children contain an img element by checking the node
+                const hasImage = node?.children?.some(
+                  (child: any) => child.tagName === 'img'
+                );
+                // If paragraph contains only an image, render as div
+                if (hasImage) {
+                  return <div className="my-8">{children}</div>;
+                }
+                return <p {...props}>{children}</p>;
+              },
               // Image Handler
               img: ({ node, ...props }) => {
                 // If the src starts with /, it's an internal image (use next/image)
                 if (props.src?.startsWith("/")) {
                   return (
-                    <div className="relative w-full h-[400px] my-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                    <span className="block relative w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                       <Image 
                         src={props.src} 
                         alt={props.alt || "Blog Image"} 
-                        fill 
-                        className="object-cover"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        className="w-full h-auto"
                       />
-                    </div>
+                    </span>
                   );
                 }
                 // Fallback for external images (standard img tag)
                 // eslint-disable-next-line @next/next/no-img-element
-                return <img {...props} className="rounded-xl my-8 border border-white/10" alt={props.alt || ""} />;
+                return <img {...props} className="w-full h-auto rounded-xl border border-white/10" alt={props.alt || ""} />;
               },
               
               // Code Block Handler

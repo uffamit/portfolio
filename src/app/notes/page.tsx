@@ -10,7 +10,7 @@ import Link from 'next/link';
 const pageUrl = 'https://amitdevx.tech/notes';
 
 export const metadata: Metadata = {
-  title: 'Notes | Amit Divekar',
+  title: 'Notes',
   description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
   alternates: {
     canonical: pageUrl,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Notes | Amit Divekar',
+    title: 'Notes',
     description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
     images: ['https://amitdevx.tech/favicon.svg'],
   },

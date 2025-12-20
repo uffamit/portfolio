@@ -1,0 +1,93 @@
+---
+title: "Reddit API and JSON for AI TRAINING"
+date: "2025-12-20"
+description: "Learn how to access Reddit data as JSON for data analysis and AI training using simple URL tricks and Python tools."
+tags: ["Reddit", "API", "JSON", "Python", "Pandas", "Data Analysis", "Web Scraping"]
+author: "Amit Divekar"
+---
+
+# Reddit API and JSON for AI TRAINING
+
+## The Simple Trick
+
+The main "trick" for accessing Reddit data as JSON is simply appending `.json` to the end of almost any Reddit URL. This allows you to view the raw data that the website uses to display content, which can be useful for parsing and analysis.
+
+For example, visiting `https://www.reddit.com/r/india/.json` returns raw JSON data like this:
+
+![Reddit JSON API Response](/blogs/reddit-api-json/reddit-json-example.png)
+
+As you can see, the JSON contains structured data about posts including titles, authors, scores, comments, and much more - all ready to be parsed and analyzed.
+
+## GitHub Resources
+
+Several GitHub repositories offer tools and libraries for working with this data:
+
+### Reddit API Documentation Wiki
+The [reddit-archive/reddit Wiki](https://github.com/reddit-archive/reddit) on GitHub provides documentation on the JSON format, including details on the structure of post and comment objects.
+
+### Data Parsers and Scrapers
+Repositories like `alumbreras/reddit_parser` provide scripts to parse large JSON data dumps (e.g., from Pushshift API archives) and store them in databases like SQLite. Others, such as `RaheesAhmed/Reddit-Scraper` and `Mohamedsaleh14/Reddit_Scrapper`, focus on using the Reddit API to download and parse data for various purposes.
+
+### Language-Specific Wrappers
+
+You can find libraries that wrap the JSON API for specific programming languages, simplifying interaction:
+
+- **PHP**: The `renoki-co/reddit-json-api` is a PHP wrapper that handles JSON information from public subreddits, including pagination and sorting features.
+- **Python**: The Python Reddit API Wrapper (PRAW) is widely used for interacting with the API and handling the underlying JSON data.
+
+### Data Export Tools
+Tools like `karlicoss/rexport` are available for exporting your personal Reddit account data (saved posts/comments) as JSON files.
+
+These GitHub resources provide code examples, documentation, and tools for leveraging Reddit's JSON capabilities, whether for data analysis, application development, or personal data management.
+
+## Using Reddit JSON with Pandas
+
+To use the Reddit `.json` trick with Pandas, you need to handle two things: Reddit's requirement for a User-Agent (to avoid 429 errors) and the deeply nested structure of the JSON response.
+
+Here is working code to fetch data from a subreddit and convert it into a clean DataFrame.
+
+### Working Pandas Code
+
+```python
+import pandas as pd
+import requests
+
+# 1. Define the target Reddit JSON URL
+url = "https://www.reddit.com/r/python.json"
+
+# 2. Add a User-Agent header (Reddit blocks default Python/Pandas agents)
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+
+# 3. Fetch the data using requests
+response = requests.get(url, headers=headers)
+data = response.json()
+
+# 4. Extract the list of posts (located under 'data' -> 'children')
+# We use json_normalize to flatten the nested 'data' field of each post
+posts = [child['data'] for child in data['data']['children']]
+df = pd.json_normalize(posts)
+
+# 5. Select only the columns you actually care about
+df_clean = df[['title', 'author', 'score', 'num_comments', 'url', 'created_utc']]
+
+# Convert the timestamp to readable date
+df_clean['created_utc'] = pd.to_datetime(df_clean['created_utc'], unit='s')
+
+print(df_clean.head())
+```
+
+### Why This Works
+
+1. **User-Agent**: Without headers, Reddit will return a `429 Too Many Requests` error.
+2. **json_normalize**: Reddit's JSON is heavily nested (e.g., `data.children[0].data.title`). This function flattens that structure into columns.
+3. **Data Path**: The actual post data is always inside the `children` list under the top-level `data` key.
+
+## Quick Tips for Data Analysis
+
+- **Sort by Top**: Change the URL to `https://www.reddit.com/r/subreddit/top.json` to get the best posts of all time.
+- **Get More Posts**: Append `?limit=100` to the URL to get the maximum number of posts allowed in a single request.
+- **Comments**: To get comments from a specific thread, use the comment URL (e.g., `.../comments/id.json`). Note that comments are returned in a list of two objects: the first is the post info, and the second contains the comment tree.
+
+## Conclusion
+
+Reddit's JSON API provides a powerful way to access and analyze Reddit data without needing OAuth authentication. By simply appending `.json` to URLs and using proper headers, you can build datasets for machine learning, data analysis, or any other purpose.
