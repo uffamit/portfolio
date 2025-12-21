@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   other: {
-    'theme-color': '#b3a5c8',
+    'theme-color': '#000000',
   },
 };
 
@@ -147,7 +147,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <meta name="theme-color" content="#b3a5c8" />
+        <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
