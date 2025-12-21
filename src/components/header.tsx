@@ -34,8 +34,12 @@ export default function Header() {
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open Menu</span>
+                {isSheetOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+                <span className="sr-only">{isSheetOpen ? 'Close Menu' : 'Open Menu'}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-xl">

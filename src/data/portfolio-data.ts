@@ -9,7 +9,6 @@ export const navigationLinks = [
   { href: '/#projects', label: 'Projects' },
   { href: '/#certifications', label: 'Certifications' },
   { href: '/#skills', label: 'Skills' },
-  { href: '/cv', label: 'CV' },
   { href: '/blogs', label: 'Blog' },
   { href: '/notes', label: 'Notes' },
   { href: '/#contact', label: 'Contact' },

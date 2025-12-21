@@ -101,7 +101,7 @@ export default function CvPage() {
                   India · Remote friendly
                 </Badge>
               </div>
-              <p className="text-lg text-muted-foreground sm:text-xl">{heroData.title}</p>
+              <p className="max-w-2xl break-words text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">{heroData.title}</p>
               <p className="max-w-3xl text-sm text-muted-foreground sm:text-base">{aboutData.bio}</p>
               <div className="flex flex-wrap gap-3">
                 <Button asChild>
