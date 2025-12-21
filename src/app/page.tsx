@@ -37,9 +37,6 @@ export default function Home() {
           <Suspense fallback={null}>
             <Certifications />
           </Suspense>
-          <Suspense fallback={null}>
-            <Skills />
-          </Suspense>
         </div>
       </main>
       <div className="mt-24 sm:mt-32 md:mt-48">
