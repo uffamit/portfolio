@@ -16,6 +16,13 @@ const InstagramIcon = () => (
   </svg>
 );
 
+// Kaggle Icon SVG
+const KaggleIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 320 512">
+    <path d="M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z"/>
+  </svg>
+);
+
 export default function Footer() {
   return (
     <footer className="bg-background/80 py-8 mt-16">
@@ -24,11 +31,16 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Amit Divekar. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
+          <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
+          </Link>
           <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
           </Link>
-          <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
+          <Link href={socialLinks.kaggle} target="_blank" rel="noopener noreferrer" aria-label="Kaggle">
+            <div className="text-muted-foreground transition-colors hover:text-foreground">
+              <KaggleIcon />
+            </div>
           </Link>
           <Link href={socialLinks.x} target="_blank" rel="noopener noreferrer" aria-label="X">
             <div className="text-muted-foreground transition-colors hover:text-foreground">

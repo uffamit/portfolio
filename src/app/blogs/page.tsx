@@ -15,7 +15,7 @@ export const metadata = {
     canonical: 'https://amitdevx.tech/blogs',
   },
   openGraph: {
-    title: "Blogs | Amit Divekar",
+    title: "Blogs",
     description: "Blogs, project breakdowns, and tech tutorials.",
     url: 'https://amitdevx.tech/blogs',
     type: 'website',
@@ -48,7 +48,7 @@ export default function BlogPage() {
             <Card 
               key={post.slug} 
               // This class string matches your Projects card style exactly
-              className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl group"
+              className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl group"
             >
               <CardHeader>
                 <div className="flex justify-between items-center mb-4">

@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `${siteUrl}/blogs/${slug}`,
     },
     openGraph: {
-      title: `${post.title} | Amit Divekar`,
+      title: post.title,
       description: post.description,
       url: `${siteUrl}/blogs/${slug}`,
       type: 'article',

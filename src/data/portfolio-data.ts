@@ -16,13 +16,13 @@ export const navigationLinks = [
 
 export const heroData = {
   name: "Amit Divekar",
-  title: "Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.",
+  title: "Software Engineer focused on Cloud, DevOps, and AI-driven solutions.",
   bio: "I build, break, and fix things for fun!!",
   contactLink: "#contact"
 };
 
 export const aboutData = {
-  bio: "Exploring AI-powered features and DevOps practices to ship reliable software.",
+  bio: "Amit Divekar is a computer science student and software engineer exploring AI-powered features and DevOps practices to ship reliable software.",
   education: {
     institution: "Savitribai Phule Pune University",
     degree: "Bachelor's Degree in Computer Science",
@@ -200,11 +200,12 @@ export const skillsData = {
 };
 
 export const socialLinks = {
-  github: "https://github.com/uffamit",
   linkedin: "https://www.linkedin.com/in/divekar-amit",
-  email: "Amitdivekar289@gmail.com",
+  github: "https://github.com/uffamit",
+  kaggle: "https://www.kaggle.com/divekaramit",
   x: "https://x.com/amitdevx_",
-  instagram: "https://instagram.com/amitdevx"
+  instagram: "https://instagram.com/amitdevx",
+  email: "Amitdivekar289@gmail.com"
 };
 
 

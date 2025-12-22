@@ -16,7 +16,7 @@ import {
 const siteUrl = 'https://amitdevx.tech';
 
 export const metadata: Metadata = {
-  title: 'Amit Divekar - CV',
+  title: 'CV',
   description:
     'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. View experience, projects, and skills.',
   alternates: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'profile',
     url: `${siteUrl}/cv`,
-    title: 'Amit Divekar - CV',
+    title: 'CV',
     description:
       'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Amit Divekar - CV',
+    title: 'CV',
     description:
       'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     images: [`${siteUrl}/favicon.svg`],

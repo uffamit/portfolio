@@ -18,7 +18,7 @@ export default function Projects() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project) => (
-            <Card key={project.title} className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
+            <Card key={project.title} className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
               <CardHeader>
                 <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>

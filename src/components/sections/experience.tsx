@@ -18,7 +18,7 @@ export default function Experience() {
                   <Briefcase className="w-5 h-5 text-primary" />
                 </div>
                 <div className="w-full md:w-[calc(50%-2.5rem)]">
-                   <div className="bg-background/20 backdrop-blur-lg border border-border/40 p-6 rounded-lg shadow-lg transform transition-transform duration-300 md:group-hover:scale-105">
+                   <div className="bg-background/15 backdrop-blur-lg border border-border/40 p-6 rounded-lg shadow-lg transform transition-transform duration-300 md:group-hover:scale-105">
                      <div className="flex justify-between items-start">
                         <h3 className="font-bold text-lg text-foreground">{exp.company}</h3>
                         <p className="text-sm text-muted-foreground whitespace-nowrap">{exp.duration}</p>

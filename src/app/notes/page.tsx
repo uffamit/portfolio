@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: pageUrl,
-    title: 'Notes | Amit Divekar',
+    title: 'Notes',
     description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
     siteName: 'Amit Divekar Portfolio',
     images: [
@@ -57,7 +57,7 @@ export default function NotesPage() {
           </p>
         </div>
         <div className="max-w-2xl mx-auto">
-          <Card className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
+          <Card className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">SYBSc CS Practicals</CardTitle>
             </CardHeader>

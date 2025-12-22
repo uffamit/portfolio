@@ -12,7 +12,8 @@ const ParticleBackground = () => {
     const currentMount = mountRef.current;
 
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 200 : 5000;
+    const isLowEndDevice = navigator.hardwareConcurrency <= 2;
+    const particleCount = isMobile ? (isLowEndDevice ? 100 : 200) : (isLowEndDevice ? 1500 : 5000);
 
     // Scene
     const scene = new THREE.Scene();
@@ -21,10 +22,14 @@ const ParticleBackground = () => {
     const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
     camera.position.z = 5;
 
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: !isMobile, alpha: true }); // Disable antialias on mobile
+    // Renderer with optimizations
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: !isMobile && !isLowEndDevice, 
+      alpha: true,
+      powerPreference: isMobile || isLowEndDevice ? 'low-power' : 'high-performance'
+    });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
     currentMount.appendChild(renderer.domElement);
 
     // Particles

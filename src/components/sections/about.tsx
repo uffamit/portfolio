@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { aboutData } from '@/data/portfolio-data';
@@ -7,14 +8,48 @@ export default function About() {
   return (
     <section id="about" className="min-h-screen flex items-center">
       <div className="w-full space-y-12">
-        <div className="text-center">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">About Me</h2>
-          <p className="text-lg text-muted-foreground mt-2 max-w-4xl mx-auto">
-            {aboutData.bio}
-          </p>
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          {/* Profile Image with Animated Frame */}
+          <div className="relative w-48 h-48 shrink-0">
+            {/* Animated rotating gradient border */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-secondary animate-spin-slow opacity-75 blur-sm"></div>
+            
+            {/* Inner glow ring */}
+            <div className="absolute inset-0.5 rounded-full bg-gradient-to-br from-primary/50 to-secondary/50 animate-pulse"></div>
+            
+            {/* Image container */}
+            <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+              <Image
+                src="/images/amit-divekar.jpg"
+                alt="Amit Divekar - Software Engineer and Web Developer"
+                fill
+                sizes="(max-width: 768px) 150px, 192px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            
+            {/* Orbiting particles */}
+            <div className="absolute inset-0 animate-spin-slow">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full blur-[1px]"></div>
+            </div>
+            <div className="absolute inset-0 animate-spin-slow animation-delay-2000">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-secondary rounded-full blur-[1px]"></div>
+            </div>
+            <div className="absolute inset-0 animate-spin-slow animation-delay-4000">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-purple-500 rounded-full blur-[1px]"></div>
+            </div>
+          </div>
+          
+          <div className="text-center md:text-left">
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">About Amit Divekar</h2>
+            <p className="text-lg text-muted-foreground mt-2 max-w-4xl">
+              {aboutData.bio}
+            </p>
+          </div>
         </div>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <Card className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
+          <Card className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
             <CardHeader className="flex flex-row items-center gap-4">
               <GraduationCap className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-2xl">Education</CardTitle>
@@ -33,7 +68,7 @@ export default function About() {
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg">
+          <Card className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
             <CardHeader className="flex flex-row items-center gap-4">
               <Sparkles className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-2xl">Hobbies & Interests</CardTitle>

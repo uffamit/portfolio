@@ -19,7 +19,7 @@ export default function Certifications() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificationsData.map((cert) => (
-            <Card key={cert.title} className="bg-background/20 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
+            <Card key={cert.title} className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
               <CardHeader className="flex flex-row items-start gap-4 space-y-0">
                 {cert.companyLogo && (
                   <div className="relative h-12 w-12 rounded-md overflow-hidden bg-white shrink-0">

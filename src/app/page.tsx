@@ -23,7 +23,7 @@ import Footer from '@/components/footer';
 
 export default function Home() {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative w-full min-h-screen overflow-x-hidden">
       <ParticleBackground />
       <Header />
       <main className="container mx-auto px-6 sm:px-8">

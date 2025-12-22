@@ -27,8 +27,9 @@ const personJsonLd = {
   },
   knowsAbout: ['Cloud Computing', 'DevOps', 'AI', 'Full-Stack Development', 'TypeScript', 'React', 'Next.js', 'AWS', 'Google Cloud', 'Azure'],
   sameAs: [
-    'https://github.com/uffamit',
     'https://www.linkedin.com/in/divekar-amit',
+    'https://github.com/uffamit',
+    'https://www.kaggle.com/divekaramit',
     'https://x.com/amitdevx_',
   ],
   email: 'Amitdivekar289@gmail.com',
@@ -51,11 +52,11 @@ const websiteJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Amit Divekar - Portfolio',
+    default: 'Amit Divekar | Software Engineer',
     template: '%s | Amit Divekar',
   },
   description:
-    'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. Experience with AWS, Google Cloud, Azure, TypeScript, React, Next.js.',
+    'Portfolio of Amit Divekar, a Software Engineer specializing in Full-Stack development, Cloud Architecture, and AI solutions.',
   applicationName: 'Amit Divekar Portfolio',
   generator: 'Next.js',
   keywords: [
@@ -145,10 +146,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
       <head>
         <meta name="theme-color" content="#000000" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <meta name="color-scheme" content="dark" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -156,6 +157,8 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
           rel="stylesheet"
+          
+          
         />
         <script
           type="application/ld+json"

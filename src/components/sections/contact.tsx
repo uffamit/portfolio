@@ -18,10 +18,17 @@ const InstagramIcon = () => (
   </svg>
 );
 
+// Kaggle Icon SVG
+const KaggleIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 320 512">
+    <path d="M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z"/>
+  </svg>
+);
+
 // Contact section with social links and email form
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-background">
+    <section id="contact" className="min-h-screen flex items-center py-24 sm:py-32">
       <div className="container mx-auto px-6 sm:px-8">
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">Get In Touch</h2>
@@ -31,7 +38,7 @@ export default function Contact() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div className="md:col-span-2">
-            <Card className="bg-card border-border/50">
+            <Card className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
                 <CardHeader>
                     <CardTitle className="font-headline text-2xl">Send me a message</CardTitle>
                     <CardDescription>This will open your default email client.</CardDescription>
@@ -41,13 +48,11 @@ export default function Contact() {
                 </CardContent>
             </Card>
           </div>
-          <div className="space-y-6">
-            <h3 className="font-headline text-2xl font-semibold">Contact Information</h3>
-            <div className="space-y-4 text-lg">
-                <a href={`mailto:${socialLinks.email}`} className="flex items-center gap-4 group">
-                    <Mail className="h-6 w-6 text-primary" />
-                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">{socialLinks.email}</span>
-                </a>
+          <Card className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl">
+            <CardHeader>
+              <CardTitle className="font-headline text-2xl">Contact Information</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-lg">
                  <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <Linkedin className="h-6 w-6 text-primary" />
                     <span className="text-muted-foreground group-hover:text-foreground transition-colors">Amit Divekar</span>
@@ -55,6 +60,10 @@ export default function Contact() {
                  <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <Github className="h-6 w-6 text-primary" />
                     <span className="text-muted-foreground group-hover:text-foreground transition-colors">@uffamit</span>
+                </Link>
+                 <Link href={socialLinks.kaggle} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                    <KaggleIcon />
+                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">divekaramit</span>
                 </Link>
                  <Link href={socialLinks.x} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <XIcon />
@@ -64,8 +73,12 @@ export default function Contact() {
                     <InstagramIcon />
                     <span className="text-muted-foreground group-hover:text-foreground transition-colors">amitdevx</span>
                 </Link>
-            </div>
-          </div>
+                <a href={`mailto:${socialLinks.email}`} className="flex items-center gap-4 group">
+                    <Mail className="h-6 w-6 text-primary" />
+                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">{socialLinks.email}</span>
+                </a>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
