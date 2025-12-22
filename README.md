@@ -2,16 +2,18 @@
 
 This is the source code for my personal portfolio website, built with Next.js, React, and Tailwind CSS. It showcases my projects, skills, and professional experience.
 
-## 🚀 Tech Stack
+all are customizable: 
 
-- **Framework**: Next.js 15.3
+## Tech Stack
+
+- **Framework**: Next.js 15.3/
 - **Styling**: Tailwind CSS
 - **UI Components**: Radix UI
 - **AI Integration**: Google Genkit with Gemini
 - **Deployment**: Vercel
 - **Type Safety**: TypeScript
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Install dependencies
@@ -27,7 +29,7 @@ npm run build
 npm start
 ```
 
-## 🌐 Deployment
+## Deployment
 
 This project is optimized for deployment on [Vercel](https://vercel.com):
 
@@ -44,7 +46,7 @@ If you're using the AI features, add these to your Vercel environment variables:
 GOOGLE_GENAI_API_KEY=your_api_key_here
 ```
 
-## 🛠️ Scripts
+## Scripts
 
 - `npm run dev` - Start development server with Turbopack
 - `npm run build` - Build for production
@@ -55,6 +57,8 @@ GOOGLE_GENAI_API_KEY=your_api_key_here
 - `npm run genkit:dev` - Start Genkit development server
 - `npm run genkit:watch` - Start Genkit in watch mode
 
-## 📝 License
+## License
+
+free to use
 
 All rights reserved © 2025 Amit Divekar
