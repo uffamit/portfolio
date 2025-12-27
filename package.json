@@ -12,8 +12,7 @@
     "typecheck": "tsc --noEmit",
     "generate:favicons": "node scripts/generate-favicons.js",
     "generate:og": "node scripts/generate-og-image.js",
-    "generate:icons": "node scripts/generate-all-icons.js",
-    "prebuild": "npm run generate:icons"
+    "generate:icons": "node scripts/generate-all-icons.js"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
