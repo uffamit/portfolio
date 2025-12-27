@@ -4,11 +4,10 @@ import { Toaster } from '@/components/ui/toaster';
 
 // Responsive viewport configuration with theme color
 export const viewport: Viewport = {
+  themeColor: '#0a0a0a',
+  colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: '#000000',
 };
 
 const siteUrl = 'https://amitdevx.tech';
@@ -52,11 +51,11 @@ const websiteJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Amit Divekar | Software Engineer',
+    default: 'Amit Divekar - Portfolio',
     template: '%s | Amit Divekar',
   },
   description:
-    'Portfolio of Amit Divekar, a Software Engineer specializing in Full-Stack development, Cloud Architecture, and AI solutions.',
+    'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. View my projects, experience, and skills.',
   applicationName: 'Amit Divekar Portfolio',
   generator: 'Next.js',
   keywords: [
@@ -64,25 +63,36 @@ export const metadata: Metadata = {
     'Software Engineer',
     'Full-Stack Developer',
     'Cloud Engineer',
-    'DevOps Engineer',
-    'AWS',
-    'Google Cloud',
-    'Azure',
-    'Docker',
-    'Kubernetes',
-    'CI/CD',
-    'TypeScript',
+    'DevOps',
+    'Portfolio',
     'React',
     'Next.js',
-    'AI-driven solutions',
-    'Python',
-    'Node.js',
-    'Portfolio',
-    'Savitribai Phule Pune University',
+    'TypeScript',
   ],
   authors: [{ name: 'Amit Divekar', url: siteUrl }],
   creator: 'Amit Divekar',
   publisher: 'Amit Divekar',
+  
+  // ✅ FIXED: Proper favicon configuration
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/favicon.svg', color: '#b3a5c8' },
+    ],
+  },
+  
+  // ✅ FIXED: PWA manifest
+  manifest: '/site.webmanifest',
+  
   referrer: 'origin-when-cross-origin',
   alternates: {
     canonical: siteUrl,
@@ -92,14 +102,16 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'Amit Divekar - Portfolio',
     description:
-      'Explore Amit Divekar’s work in Next.js, AI, DevOps, and cloud. Projects, experience, and certifications in one place.',
+      'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     siteName: 'Amit Divekar Portfolio',
+    locale: 'en_US',
     images: [
       {
-        url: `${siteUrl}/favicon.svg`,
-        width: 512,
-        height: 512,
-        alt: 'Amit Divekar logo',
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Amit Divekar - Software Engineer Portfolio',
+        type: 'image/png',
       },
     ],
   },
@@ -107,59 +119,40 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Amit Divekar - Portfolio',
     description:
-      'Next.js developer focused on performant web apps, AI, DevOps, CI/CD, and cloud infrastructure.',
-    images: [`${siteUrl}/favicon.svg`],
-    creator: '@divekar_amit',
+      'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
+    images: [`${siteUrl}/og-image.png`],
+    creator: '@amitdevx_',
   },
+  
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
       'max-video-preview': -1,
+      'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
-  formatDetection: {
-    email: true,
-    address: true,
-    telephone: true,
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' }, // Fallback/Crawler preference
-      { url: '/favicon.svg', type: 'image/svg+xml' }, // High quality for modern tabs
-    ],
-    apple: '/favicon.svg',
-  },
+  
   other: {
-    'theme-color': '#000000',
+    'msapplication-TileColor': '#0a0a0a',
+    'msapplication-config': '/browserconfig.xml',
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
+    <html lang="en">
       <head>
-        <meta name="theme-color" content="#000000" />
-        <meta name="color-scheme" content="dark" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
-          rel="stylesheet"
-          
-          
-        />
+        {/* Preload favicons for faster loading */}
+        <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+        <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
