@@ -38,14 +38,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.description,
       url: `${siteUrl}/blogs/${slug}`,
       type: 'article',
+      siteName: 'Amit Divekar',
       publishedTime: post.date,
       authors: ['Amit Divekar'],
       tags: post.tags,
+      images: [
+        {
+          url: `${siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `Amit Divekar - ${post.title}`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Amit Divekar - ${post.title}`,
       description: post.description,
+      images: [`${siteUrl}/og-image.png`],
       creator: '@amitdevx_',
     },
   };
@@ -59,8 +69,40 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
+  const siteUrl = 'https://amitdevx.tech';
+  
+  // Article JSON-LD for rich search results
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    author: {
+      '@type': 'Person',
+      name: 'Amit Divekar',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Amit Divekar',
+      url: siteUrl,
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/blogs/${slug}`,
+    },
+    image: `${siteUrl}/og-image.png`,
+    keywords: post.tags.join(', '),
+  };
+
   return (
     <div className="relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Header />
       <article className="min-h-screen pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-3xl">

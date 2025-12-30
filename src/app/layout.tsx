@@ -38,9 +38,9 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   url: siteUrl,
-  name: 'Amit Divekar - Portfolio',
+  name: 'Amit Divekar',
   description:
-    'Portfolio for Amit Divekar, showcasing Next.js projects, skills, and experience across web development and cloud.',
+    'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. View my projects, experience, and skills.',
   potentialAction: {
     '@type': 'SearchAction',
     target: `${siteUrl}/?q={search_term_string}`,
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Amit Divekar - Portfolio',
+    title: 'Amit Divekar',
     description:
       'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     siteName: 'Amit Divekar Portfolio',
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Amit Divekar - Portfolio',
+    title: 'Amit Divekar',
     description:
       'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     images: [`${siteUrl}/og-image.png`],

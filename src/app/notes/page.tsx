@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     url: pageUrl,
     title: 'Amit Divekar - Notes',
     description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
-    siteName: 'Amit Divekar Portfolio',
+    siteName: 'Amit Divekar',
     images: [
       {
-        url: 'https://amitdevx.tech/favicon.svg',
-        width: 512,
-        height: 512,
-        alt: 'Amit Divekar logo',
+        url: 'https://amitdevx.tech/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Amit Divekar - Notes',
       },
     ],
   },
@@ -34,7 +34,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Amit Divekar - Notes',
     description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
-    images: ['https://amitdevx.tech/favicon.svg'],
+    images: ['https://amitdevx.tech/og-image.png'],
+    creator: '@amitdevx_',
   },
   robots: {
     index: true,

@@ -10,15 +10,31 @@ import Footer from '@/components/footer';
 
 export const metadata = {
   title: "Blogs",
-  description: "Blogs, project breakdowns, and tech tutorials.",
+  description: "Blogs, project breakdowns, and tech tutorials by Amit Divekar.",
   alternates: {
     canonical: 'https://amitdevx.tech/blogs',
   },
   openGraph: {
     title: "Amit Divekar - Blogs",
-    description: "Blogs, project breakdowns, and tech tutorials.",
+    description: "Blogs, project breakdowns, and tech tutorials by Amit Divekar.",
     url: 'https://amitdevx.tech/blogs',
     type: 'website',
+    siteName: 'Amit Divekar',
+    images: [
+      {
+        url: 'https://amitdevx.tech/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Amit Divekar - Blogs',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Amit Divekar - Blogs',
+    description: 'Blogs, project breakdowns, and tech tutorials by Amit Divekar.',
+    images: ['https://amitdevx.tech/og-image.png'],
+    creator: '@amitdevx_',
   },
 };
 

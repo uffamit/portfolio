@@ -32,12 +32,13 @@ export const metadata: Metadata = {
     title: 'Amit Divekar - CV',
     description:
       'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
+    siteName: 'Amit Divekar',
     images: [
       {
-        url: `${siteUrl}/favicon.svg`,
-        width: 512,
-        height: 512,
-        alt: 'Amit Divekar logo',
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Amit Divekar - Software Engineer',
       },
     ],
   },
@@ -46,7 +47,8 @@ export const metadata: Metadata = {
     title: 'Amit Divekar - CV',
     description:
       'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
-    images: [`${siteUrl}/favicon.svg`],
+    images: [`${siteUrl}/og-image.png`],
+    creator: '@amitdevx_',
   },
 };
 
