@@ -51,8 +51,8 @@ const websiteJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Amit Divekar - Portfolio',
-    template: '%s | Amit Divekar',
+    default: 'Amit Divekar',
+    template: 'Amit Divekar - %s',
   },
   description:
     'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. View my projects, experience, and skills.',

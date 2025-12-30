@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: pageUrl,
-    title: 'Notes',
+    title: 'Amit Divekar - Notes',
     description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
     siteName: 'Amit Divekar Portfolio',
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Notes',
+    title: 'Amit Divekar - Notes',
     description: 'Download SYBSc CS practical notes and resources curated by Amit Divekar.',
     images: ['https://amitdevx.tech/favicon.svg'],
   },

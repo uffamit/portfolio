@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'profile',
     url: `${siteUrl}/cv`,
-    title: 'CV',
+    title: 'Amit Divekar - CV',
     description:
       'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CV',
+    title: 'Amit Divekar - CV',
     description:
       'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
     images: [`${siteUrl}/favicon.svg`],

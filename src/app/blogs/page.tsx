@@ -15,7 +15,7 @@ export const metadata = {
     canonical: 'https://amitdevx.tech/blogs',
   },
   openGraph: {
-    title: "Blogs",
+    title: "Amit Divekar - Blogs",
     description: "Blogs, project breakdowns, and tech tutorials.",
     url: 'https://amitdevx.tech/blogs',
     type: 'website',
