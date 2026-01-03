@@ -13,9 +13,9 @@ const nextConfig: NextConfig = {
     return `build-${Date.now()}`;
   },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
+    // Enforce code quality in production builds
+    ignoreDuringBuilds: false,
+    dirs: ['src', 'app', 'components', 'lib'],
   },
   typescript: {
     // Warning: This allows production builds to successfully complete even if

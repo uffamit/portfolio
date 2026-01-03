@@ -26,7 +26,7 @@ export default function Home() {
     <div className="relative w-full min-h-screen overflow-x-hidden">
       <ParticleBackground />
       <Header />
-      <main className="container mx-auto px-6 sm:px-8">
+      <main id="main-content" className="container mx-auto px-6 sm:px-8">
         <div className="flex flex-col gap-24 sm:gap-32 md:gap-48">
           <Hero />
           <About />

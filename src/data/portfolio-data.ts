@@ -62,39 +62,39 @@ export const projectsData = [
     title: "Professor Profiler",
     description: "An advanced multi-agent system that reverse-engineers exam papers to decode professor psychology and generate optimized study strategies.",
     technologies: ["Python", "Software Development", "DevOps", "Git + GitHub", "Multi-agent AI", "Hub-and-Spoke architecture"],
-    githubLink: "https://github.com/uffamit/Professor_Profiler",
-    docLink: "https://deepwiki.com/uffamit/Professor_Profiler"
+    githubLink: "https://github.com/amitdevx/Professor_Profiler",
+    docLink: "https://deepwiki.com/amitdevx/Professor_Profiler"
   },
   {
     title: "Eatinformed",
     description: "An AI-driven platform for instant nutrition analysis from food label images, built with Next.js, Genkit, and Google Gemini, featuring a modern UI with Tailwind CSS.",
     technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Genkit", "Gemini"],
-    githubLink: "https://github.com/uffamit/Eatinformed",
+    githubLink: "https://github.com/amitdevx/Eatinformed",
     liveLink: "https://eatinformed.amitdevx.tech/"
   },
   {
     title: "2FA Password Protector",
     description: "A Flask-based authentication system with three layers of security: login, PIN, and Two-Factor Authentication (2FA), using SQLite and cryptography for secure data handling.",
     technologies: ["Python", "Flask", "SQLite", "Cryptography"],
-    githubLink: "https://github.com/uffamit/2FA-Password-Protector"
+    githubLink: "https://github.com/amitdevx/2FA-Password-Protector"
   },
   {
     title: "Cloud File Uploader",
     description: "A secure file storage system similar to Google Drive, developed with Node.js and SQLite, allowing users to store and manage files efficiently in a cloud-based environment.",
     technologies: ["Node.js", "SQLite"],
-    githubLink: "https://github.com/uffamit/FileFlow"
+    githubLink: "https://github.com/amitdevx/FileFlow"
   },
     {
     title: "Anime Viewing Platform",
     description: "A responsive Flask-based website for streaming copyright-free anime, ensuring a smooth user experience with dynamic content loading and an intuitive UI.",
     technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript"],
-    githubLink: "https://github.com/uffamit/Anime-Viewing-Platform"
+    githubLink: "https://github.com/amitdevx/Anime-Viewing-Platform"
   },
   {
     title: "Password Strength Checker",
     description: "A web-based tool to assess the strength of passwords based on various criteria like length, character types, and common patterns.",
     technologies: ["JavaScript", "HTML", "CSS"],
-    githubLink: "https://github.com/uffamit/Password-Strength-Checker",
+    githubLink: "https://github.com/amitdevx/Password-Strength-Checker",
     liveLink: "https://password-strength-checker-nine-mu.vercel.app/"
   }
 ];
@@ -201,7 +201,7 @@ export const skillsData = {
 
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/divekar-amit",
-  github: "https://github.com/uffamit",
+  github: "https://github.com/amitdevx",
   kaggle: "https://www.kaggle.com/divekaramit",
   x: "https://x.com/amitdevx_",
   instagram: "https://instagram.com/amitdevx",

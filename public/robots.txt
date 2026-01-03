@@ -1,9 +1,32 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 #
-# Allow all search engines to crawl the site
+# Primary Rules - Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Specific search engines (optional - can add custom rules)
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+# Block AI crawlers (optional - uncomment if desired)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: ChatGPT-User
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+
+# Crawl delay for aggressive bots
+User-agent: *
+Crawl-delay: 1
 
 # Preferred canonical domain
 Host: https://amitdevx.tech

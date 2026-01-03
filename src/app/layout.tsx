@@ -27,7 +27,7 @@ const personJsonLd = {
   knowsAbout: ['Cloud Computing', 'DevOps', 'AI', 'Full-Stack Development', 'TypeScript', 'React', 'Next.js', 'AWS', 'Google Cloud', 'Azure'],
   sameAs: [
     'https://www.linkedin.com/in/divekar-amit',
-    'https://github.com/uffamit',
+    'https://github.com/amitdevx',
     'https://www.kaggle.com/divekaramit',
     'https://x.com/amitdevx_',
   ],
@@ -45,6 +45,26 @@ const websiteJsonLd = {
     '@type': 'SearchAction',
     target: `${siteUrl}/?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
+  },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Amit Divekar',
+  url: siteUrl,
+  logo: `${siteUrl}/android-chrome-512x512.png`,
+  description:
+    'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
+  sameAs: [
+    'https://www.linkedin.com/in/divekar-amit',
+    'https://github.com/amitdevx',
+    'https://www.kaggle.com/divekaramit',
+    'https://x.com/amitdevx_',
+  ],
+  founder: {
+    '@type': 'Person',
+    name: 'Amit Divekar',
   },
 };
 
@@ -161,8 +181,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
       <body>
+        {/* Skip to content link for accessibility */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         {children}
         <Toaster />
       </body>

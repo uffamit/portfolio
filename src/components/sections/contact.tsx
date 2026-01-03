@@ -59,7 +59,7 @@ export default function Contact() {
                 </Link>
                  <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <Github className="h-6 w-6 text-primary" />
-                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">@uffamit</span>
+                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">@amitdevx</span>
                 </Link>
                  <Link href={socialLinks.kaggle} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                     <KaggleIcon />
