@@ -1,5 +1,6 @@
 # Robots.txt for amitdevx.tech
 # Allow all search engines to crawl the site
+# Last Updated: January 10, 2026
 
 # Primary Rules - Allow all search engines
 User-agent: *
