@@ -43,7 +43,7 @@ export default function About() {
           </div>
           
           <div className="text-center md:text-left">
-            <h2 id="about-heading" className="font-headline text-4xl md:text-5xl font-bold">About Amit Divekar</h2>
+            <h2 id="about-heading" className="font-headline text-4xl md:text-5xl font-bold">About - Full-Stack Software Engineer</h2>
             <p className="text-lg text-muted-foreground mt-2 max-w-4xl">
               {aboutData.bio}
             </p>

@@ -6,8 +6,8 @@ export default function Experience() {
     <section id="experience" className="min-h-screen flex items-center">
       <div className="w-full space-y-12">
         <div className="text-center">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Experience</h2>
-          <p className="text-lg text-muted-foreground mt-2">My professional journey and virtual experiences.</p>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">Professional Experience - Software Engineer & DevOps</h2>
+          <p className="text-lg text-muted-foreground mt-2">My professional journey in Cloud Architecture, DevOps, and Full-Stack Software Development.</p>
         </div>
         <div className="relative">
           <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border/40" />

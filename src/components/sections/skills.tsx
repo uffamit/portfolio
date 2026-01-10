@@ -7,9 +7,9 @@ export default function Skills() {
         
         {/* Header */}
         <div className="text-center space-y-4">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Skills</h2>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">Full-Stack Developer Skills & Expertise</h2>
           <p className="text-lg text-muted-foreground">
-            My technical expertise.
+            Cloud Architecture, DevOps, Frontend & Backend Development with React, TypeScript, Python, and Docker.
           </p>
         </div>
 

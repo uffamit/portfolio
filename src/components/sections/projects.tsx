@@ -11,9 +11,9 @@ export default function Projects() {
     <section id="projects" className="min-h-screen flex items-center" aria-labelledby="projects-heading">
       <div className="w-full space-y-12">
         <div className="text-center">
-          <h2 id="projects-heading" className="font-headline text-4xl md:text-5xl font-bold">Projects</h2>
+          <h2 id="projects-heading" className="font-headline text-4xl md:text-5xl font-bold">Software Engineering Projects & Portfolio</h2>
           <p className="text-lg text-muted-foreground mt-2">
-            A selection of my recent work.
+            Full-Stack development projects featuring React, Next.js, TypeScript, and Cloud technologies.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">

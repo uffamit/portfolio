@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
@@ -111,11 +112,11 @@ const breadcrumbListJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Amit Divekar - Full-Stack Software Engineer',
-    template: 'Amit Divekar - %s',
+    default: 'Amit Divekar | Full-Stack Software Engineer | Cloud & DevOps Specialist',
+    template: 'Amit Divekar | %s',
   },
   description:
-    'Software Engineer with Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. View my projects, experience, and skills.',
+    'Full-Stack Software Engineer specializing in Cloud Architecture, DevOps, and AI solutions. Expert in AWS, Google Cloud, React, Next.js, TypeScript, Docker. View my portfolio, projects, and experience.',
   applicationName: 'Amit Divekar Portfolio',
   generator: 'Next.js',
   keywords: [
@@ -251,6 +252,30 @@ export default function RootLayout({
         {/* Preload critical assets */}
         <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
         <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+        
+        {/* Google Analytics 4 */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
         
         {/* Structured Data */}
         <script

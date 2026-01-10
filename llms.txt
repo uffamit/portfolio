@@ -1,0 +1,33 @@
+# Amit Divekar - Full-Stack Software Engineer Portfolio
+> A professional portfolio showcasing Full-Stack Software Engineering expertise in Cloud Architecture, DevOps, AI solutions, and modern web development.
+
+## About
+- [Home](https://amitdevx.tech): Professional introduction and hero section.
+- [About Me](https://amitdevx.tech/#about): Background, education (CGPA 8.36/10), and personal expertise overview.
+- [Resume/CV](https://amitdevx.tech/cv): Complete professional credentials and qualifications.
+
+## Professional Content
+- [Experience](https://amitdevx.tech/#experience): Professional journey including Virtual Experience at Electronic Arts (EA).
+- [Projects](https://amitdevx.tech/#projects): Portfolio projects demonstrating Full-Stack capabilities with React, Next.js, TypeScript, and Cloud technologies.
+- [Skills & Expertise](https://amitdevx.tech/#skills): Comprehensive technology stack including AWS, Google Cloud, Azure, Docker, Kubernetes, React, Next.js, Python, Node.js, and AI/ML.
+- [Certifications](https://amitdevx.tech/#certifications): Professional certifications and achievements in software engineering.
+
+## Technical Content
+- [Technical Blog](https://amitdevx.tech/blogs): Articles on software engineering, DevOps, and cloud architecture.
+- [Reddit API in JSON](https://amitdevx.tech/blogs/reddit-api-json): Deep dive into API integration and data structures.
+- [Professor Profiler](https://amitdevx.tech/blogs/professor-profiler): Software engineering patterns and best practices.
+
+## Connect
+- [Contact](https://amitdevx.tech/#contact): Get in touch for inquiries and collaboration.
+- [GitHub](https://github.com/amitdevx): View source code and open-source contributions.
+- [LinkedIn](https://www.linkedin.com/in/divekar-amit): Professional networking profile.
+- [Twitter/X](https://twitter.com/amitdevx_): Follow for tech updates and insights.
+- [Kaggle](https://www.kaggle.com/divekaramit): Data science and ML projects.
+
+## Key Expertise Areas
+- **Cloud Platforms**: AWS, Google Cloud Platform (GCP), Microsoft Azure
+- **DevOps & Infrastructure**: Docker, Kubernetes, CI/CD, GitHub Actions
+- **Frontend Development**: React, Next.js, TypeScript, Tailwind CSS, shadcn/ui
+- **Backend Development**: Node.js, Express.js, Python, RESTful APIs
+- **Databases**: SQL, NoSQL, Data Structures
+- **AI & Machine Learning**: AI-driven solutions, ML applications

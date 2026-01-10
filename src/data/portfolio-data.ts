@@ -16,8 +16,8 @@ export const navigationLinks = [
 
 export const heroData = {
   name: "Amit Divekar",
-  title: "Software Engineer focused on Cloud, DevOps, and AI-driven solutions.",
-  bio: "I build, break, and fix things for fun!!",
+  title: "Full-Stack Software Engineer | Cloud & DevOps Specialist | AI Solutions",
+  bio: "Full-Stack Software Engineer with expertise in Cloud Architecture (AWS, Google Cloud, Azure), DevOps practices, and AI-driven solutions. I build scalable applications using modern technologies like React, Next.js, TypeScript, and Docker.",
   contactLink: "#contact"
 };
 
