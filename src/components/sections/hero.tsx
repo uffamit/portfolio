@@ -6,7 +6,7 @@ import { SkillsMarquee } from '@/components/ui/skills-marquee';
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center text-center px-4">
+    <section id="home" className="min-h-screen flex items-center justify-center text-center px-4" aria-label="Hero Section">
       <div className="flex flex-col items-center gap-6 w-full max-w-6xl">
         <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight">
           <span className="text-foreground">Amit </span>

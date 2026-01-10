@@ -16,15 +16,29 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Amit Divekar',
+  alternateName: 'amitdevx',
   url: siteUrl,
+  image: `${siteUrl}/og-image.png`,
   jobTitle: 'Software Engineer',
   description:
-    'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions.',
+    'Software Engineer with a Full-Stack background, focused on Cloud, DevOps, and AI-driven solutions. Experienced in AWS, GCP, Azure, Docker, Kubernetes, and modern web technologies.',
   alumniOf: {
     '@type': 'CollegeOrUniversity',
     name: 'Savitribai Phule Pune University',
   },
-  knowsAbout: ['Cloud Computing', 'DevOps', 'AI', 'Full-Stack Development', 'TypeScript', 'React', 'Next.js', 'AWS', 'Google Cloud', 'Azure'],
+  knowsAbout: [
+    'Cloud Computing', 'DevOps', 'AI', 'Machine Learning', 'Full-Stack Development', 
+    'TypeScript', 'JavaScript', 'Python', 'React', 'Next.js', 'Node.js',
+    'AWS', 'Google Cloud Platform', 'Azure', 'Docker', 'Kubernetes',
+    'CI/CD', 'Microservices', 'System Design', 'Web Development'
+  ],
+  knowsLanguage: ['English', 'Hindi', 'Marathi'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Pune',
+    addressRegion: 'Maharashtra',
+    addressCountry: 'India'
+  },
   sameAs: [
     'https://www.linkedin.com/in/divekar-amit',
     'https://github.com/amitdevx',
@@ -32,6 +46,7 @@ const personJsonLd = {
     'https://x.com/amitdevx_',
   ],
   email: 'amitdivekar289@gmail.com',
+  telephone: '+91-XXXXXXXXXX', // Add if you want
 };
 
 const websiteJsonLd = {
@@ -68,6 +83,31 @@ const organizationJsonLd = {
   },
 };
 
+const breadcrumbListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blogs',
+      item: `${siteUrl}/blogs`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'CV',
+      item: `${siteUrl}/cv`,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -83,11 +123,32 @@ export const metadata: Metadata = {
     'Software Engineer',
     'Full-Stack Developer',
     'Cloud Engineer',
-    'DevOps',
+    'DevOps Engineer',
     'Portfolio',
-    'React',
-    'Next.js',
+    'React Developer',
+    'Next.js Developer',
     'TypeScript',
+    'AWS',
+    'Google Cloud Platform',
+    'GCP',
+    'Azure',
+    'Docker',
+    'Kubernetes',
+    'CI/CD',
+    'Python',
+    'Node.js',
+    'Machine Learning',
+    'AI Solutions',
+    'Cloud Architecture',
+    'Microservices',
+    'System Design',
+    'Backend Development',
+    'Frontend Development',
+    'Web Development',
+    'Software Development',
+    'Tech Blog',
+    'Pune',
+    'India',
   ],
   authors: [{ name: 'Amit Divekar', url: siteUrl }],
   creator: 'Amit Divekar',
@@ -159,6 +220,18 @@ export const metadata: Metadata = {
   other: {
     'msapplication-TileColor': '#0a0a0a',
     'msapplication-config': '/browserconfig.xml',
+    'google-site-verification': 'pending', // Add your verification code
+    'format-detection': 'telephone=no',
+  },
+  
+  // Language and location metadata
+  category: 'technology',
+  classification: 'Portfolio Website',
+  
+  // Additional metadata for better indexing
+  verification: {
+    // google: 'your-google-verification-code',
+    // bing: 'your-bing-verification-code',
   },
 };
 
@@ -170,9 +243,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload favicons for faster loading */}
+        {/* DNS Prefetch and Preconnect for external resources */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preload critical assets */}
         <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
         <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -184,6 +264,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListJsonLd) }}
         />
       </head>
       <body>

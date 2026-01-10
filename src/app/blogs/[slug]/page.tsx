@@ -30,33 +30,48 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.title,
     description: post.description,
+    keywords: [...post.tags, 'Amit Divekar', 'Software Engineering', 'Tech Blog', 'Tutorial'],
+    authors: [{ name: 'Amit Divekar', url: siteUrl }],
+    creator: 'Amit Divekar',
+    publisher: 'Amit Divekar',
     alternates: {
       canonical: `${siteUrl}/blogs/${slug}`,
     },
     openGraph: {
-      title: `Amit Divekar - ${post.title}`,
+      title: `${post.title} | Amit Divekar`,
       description: post.description,
       url: `${siteUrl}/blogs/${slug}`,
       type: 'article',
       siteName: 'Amit Divekar',
+      locale: 'en_US',
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: ['Amit Divekar'],
+      section: 'Technology',
       tags: post.tags,
       images: [
         {
           url: `${siteUrl}/og-image.png`,
           width: 1200,
           height: 630,
-          alt: `Amit Divekar - ${post.title}`,
+          alt: `${post.title} - Amit Divekar`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Amit Divekar - ${post.title}`,
+      title: `${post.title} | Amit Divekar`,
       description: post.description,
       images: [`${siteUrl}/og-image.png`],
       creator: '@amitdevx_',
+      site: '@amitdevx_',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
     },
   };
 }
@@ -74,18 +89,28 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   // Article JSON-LD for rich search results
   const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
     author: {
       '@type': 'Person',
       name: 'Amit Divekar',
       url: siteUrl,
+      jobTitle: 'Software Engineer',
+      sameAs: [
+        'https://www.linkedin.com/in/divekar-amit',
+        'https://github.com/amitdevx',
+        'https://x.com/amitdevx_',
+      ],
     },
     publisher: {
       '@type': 'Person',
       name: 'Amit Divekar',
       url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/android-chrome-512x512.png`,
+      },
     },
     datePublished: post.date,
     dateModified: post.date,
@@ -93,8 +118,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       '@type': 'WebPage',
       '@id': `${siteUrl}/blogs/${slug}`,
     },
-    image: `${siteUrl}/og-image.png`,
+    image: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/og-image.png`,
+      width: 1200,
+      height: 630,
+    },
     keywords: post.tags.join(', '),
+    articleSection: 'Technology',
+    inLanguage: 'en-US',
+    wordCount: post.content.split(/\s+/).length,
   };
 
   return (

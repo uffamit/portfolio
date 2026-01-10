@@ -1,16 +1,22 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# Primary Rules - Allow all search engines to crawl the site
+# Robots.txt for amitdevx.tech
+# Allow all search engines to crawl the site
+
+# Primary Rules - Allow all search engines
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /*.json$
 
-# Specific search engines (optional - can add custom rules)
+# Specific search engines
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /public/
 
 User-agent: Bingbot
 Allow: /
@@ -26,10 +32,10 @@ Disallow: /api/
 
 # Crawl delay for aggressive bots
 User-agent: *
-Crawl-delay: 1
+Crawl-delay: 0.5
 
 # Preferred canonical domain
 Host: https://amitdevx.tech
 
-# Dynamic sitemap for amitdevx.tech
+# Sitemap location
 Sitemap: https://amitdevx.tech/sitemap.xml

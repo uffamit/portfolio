@@ -6,43 +6,44 @@ import { GraduationCap, Sparkles } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen flex items-center">
+    <section id="about" className="min-h-screen flex items-center" aria-labelledby="about-heading">
       <div className="w-full space-y-12">
         <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
           {/* Profile Image with Animated Frame */}
           <div className="relative w-48 h-48 shrink-0">
             {/* Animated rotating gradient border */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-secondary animate-spin-slow opacity-75 blur-sm"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-purple-500 to-secondary animate-spin-slow opacity-75 blur-sm" aria-hidden="true"></div>
             
             {/* Inner glow ring */}
-            <div className="absolute inset-0.5 rounded-full bg-gradient-to-br from-primary/50 to-secondary/50 animate-pulse"></div>
+            <div className="absolute inset-0.5 rounded-full bg-gradient-to-br from-primary/50 to-secondary/50 animate-pulse" aria-hidden="true"></div>
             
             {/* Image container */}
             <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
               <Image
                 src="/images/amit-divekar.jpg"
-                alt="Amit Divekar - Software Engineer and Web Developer"
+                alt="Professional portrait of Amit Divekar, Software Engineer specializing in Cloud, DevOps, and Full-Stack Development"
                 fill
                 sizes="(max-width: 768px) 150px, 192px"
                 className="object-cover"
                 priority
+                loading="eager"
               />
             </div>
             
             {/* Orbiting particles */}
-            <div className="absolute inset-0 animate-spin-slow">
+            <div className="absolute inset-0 animate-spin-slow" aria-hidden="true">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full blur-[1px]"></div>
             </div>
-            <div className="absolute inset-0 animate-spin-slow animation-delay-2000">
+            <div className="absolute inset-0 animate-spin-slow animation-delay-2000" aria-hidden="true">
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-secondary rounded-full blur-[1px]"></div>
             </div>
-            <div className="absolute inset-0 animate-spin-slow animation-delay-4000">
+            <div className="absolute inset-0 animate-spin-slow animation-delay-4000" aria-hidden="true">
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-purple-500 rounded-full blur-[1px]"></div>
             </div>
           </div>
           
           <div className="text-center md:text-left">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">About Amit Divekar</h2>
+            <h2 id="about-heading" className="font-headline text-4xl md:text-5xl font-bold">About Amit Divekar</h2>
             <p className="text-lg text-muted-foreground mt-2 max-w-4xl">
               {aboutData.bio}
             </p>

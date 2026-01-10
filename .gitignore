@@ -42,3 +42,13 @@ next-env.d.ts
 
 # IDE and environment
 .modified
+
+# Documentation and audit files (internal only)
+/docs/blueprint.md
+/docs/DEPLOYMENT.md
+/docs/MIGRATION.md
+/docs/SEO-IMPROVEMENTS.md
+seo.pdf
+
+# Sensitive files
+.well-known/security.txt

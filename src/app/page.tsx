@@ -26,8 +26,8 @@ export default function Home() {
     <div className="relative w-full min-h-screen overflow-x-hidden">
       <ParticleBackground />
       <Header />
-      <main id="main-content" className="container mx-auto px-6 sm:px-8">
-        <div className="flex flex-col gap-24 sm:gap-32 md:gap-48">
+      <main id="main-content" className="container mx-auto px-6 sm:px-8" role="main">
+        <article className="flex flex-col gap-24 sm:gap-32 md:gap-48">
           <Hero />
           <About />
           <Experience />
@@ -37,7 +37,7 @@ export default function Home() {
           <Suspense fallback={null}>
             <Certifications />
           </Suspense>
-        </div>
+        </article>
       </main>
       <div className="mt-24 sm:mt-32 md:mt-48">
         <Suspense fallback={null}>

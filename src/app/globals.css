@@ -5,6 +5,9 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 @layer base {

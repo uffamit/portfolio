@@ -9,32 +9,51 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata = {
-  title: "Blogs",
-  description: "Blogs, project breakdowns, and tech tutorials by Amit Divekar.",
+  title: "Tech Blogs & Tutorials | Amit Divekar",
+  description: "In-depth technical blogs, project breakdowns, and tutorials on Cloud, DevOps, Full-Stack Development, and AI by Amit Divekar. Learn from real-world implementations.",
+  keywords: [
+    'Tech Blog',
+    'Software Engineering Blog',
+    'DevOps Tutorials',
+    'Cloud Computing Articles',
+    'Full-Stack Development',
+    'Programming Tutorials',
+    'Amit Divekar Blog',
+    'Technical Writing',
+    'Code Examples',
+    'System Design',
+  ],
   alternates: {
     canonical: 'https://amitdevx.tech/blogs',
   },
   openGraph: {
-    title: "Amit Divekar - Blogs",
-    description: "Blogs, project breakdowns, and tech tutorials by Amit Divekar.",
+    title: "Tech Blogs & Tutorials | Amit Divekar",
+    description: "In-depth technical blogs, project breakdowns, and tutorials on Cloud, DevOps, Full-Stack Development, and AI.",
     url: 'https://amitdevx.tech/blogs',
     type: 'website',
     siteName: 'Amit Divekar',
+    locale: 'en_US',
     images: [
       {
         url: 'https://amitdevx.tech/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Amit Divekar - Blogs',
+        alt: 'Amit Divekar - Tech Blogs & Tutorials',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Amit Divekar - Blogs',
-    description: 'Blogs, project breakdowns, and tech tutorials by Amit Divekar.',
+    title: 'Tech Blogs & Tutorials | Amit Divekar',
+    description: 'In-depth technical blogs and tutorials on Cloud, DevOps, and Full-Stack Development.',
     images: ['https://amitdevx.tech/og-image.png'],
     creator: '@amitdevx_',
+    site: '@amitdevx_',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
   },
 };
 
@@ -45,26 +64,28 @@ export default function BlogPage() {
     <div className="relative overflow-x-hidden">
       <ParticleBackground />
       <Header />
-      <section className="min-h-screen pt-32 pb-12 px-6 sm:px-8 flex flex-col items-center">
+      <main role="main">
+      <section className="min-h-screen pt-32 pb-12 px-6 sm:px-8 flex flex-col items-center" aria-labelledby="blogs-heading">
         <div className="container mx-auto max-w-5xl space-y-12">
         
         {/* Header - Matches your Projects Section */}
         <div className="text-center space-y-4">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Blogs
+          <h1 id="blogs-heading" className="font-headline text-4xl md:text-5xl font-bold">
+            Tech Blogs & Tutorials
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Deep dives into code, bugs I've fixed, and systems I've built.
+            Deep dives into code, bugs I've fixed, and systems I've built. Real-world solutions and technical insights.
           </p>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
           {posts.map((post) => (
             <Card 
               key={post.slug} 
               // This class string matches your Projects card style exactly
               className="bg-background/15 backdrop-blur-lg border border-border/40 shadow-lg flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:shadow-2xl group"
+              role="listitem"
             >
               <CardHeader>
                 <div className="flex justify-between items-center mb-4">
@@ -102,6 +123,7 @@ export default function BlogPage() {
         </div>
       </div>
     </section>
+    </main>
     <Footer />
     </div>
   );
