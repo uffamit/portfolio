@@ -25,12 +25,12 @@ const KaggleIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-background/80 py-8 mt-16">
+    <footer className="bg-background/80 py-8 mt-16" role="contentinfo">
       <div className="container mx-auto px-6 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} Amit Divekar. All rights reserved.
         </p>
-        <div className="flex items-center gap-4">
+        <nav className="flex items-center gap-4" aria-label="Social media links">
           <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
           </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
           <Link href={`mailto:${socialLinks.email}`} aria-label="Email">
             <Mail className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
           </Link>
-        </div>
+        </nav>
       </div>
     </footer>
   );
