@@ -110,8 +110,9 @@ const breadcrumbListJsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  charset: 'utf-8',
   title: {
-    default: 'Amit Divekar',
+    default: 'Amit Divekar - Full-Stack Software Engineer',
     template: 'Amit Divekar - %s',
   },
   description:
