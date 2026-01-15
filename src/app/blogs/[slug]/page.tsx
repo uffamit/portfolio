@@ -188,7 +188,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               p: ({ node, children, ...props }) => {
                 // Check if children contain an img element by checking the node
                 const hasImage = node?.children?.some(
-                  (child: { tagName?: string }) => child.tagName === 'img'
+                  (child) => (child as { tagName?: string }).tagName === 'img'
                 );
                 // If paragraph contains only an image, render as div
                 if (hasImage) {
