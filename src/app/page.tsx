@@ -13,9 +13,6 @@ const Projects = dynamic(() => import('@/components/sections/projects'), {
 const Certifications = dynamic(() => import('@/components/sections/certifications'), {
   loading: () => null,
 });
-const Skills = dynamic(() => import('@/components/sections/skills'), {
-  loading: () => null,
-});
 const Contact = dynamic(() => import('@/components/sections/contact'), {
   loading: () => null,
 });

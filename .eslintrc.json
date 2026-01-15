@@ -1,6 +1,27 @@
 {
+  "root": true,
   "extends": [
     "next/core-web-vitals",
     "next/typescript"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "@next/next/no-img-element": "off",
+    "no-unused-vars": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-children-prop": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", { 
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_|^React$",
+      "args": "after-used"
+    }],
+    "@typescript-eslint/no-explicit-any": "warn"
+  },
+  "ignorePatterns": [
+    ".next",
+    "node_modules",
+    "build",
+    "dist",
+    "out"
   ]
 }

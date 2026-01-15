@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import React from 'react';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 

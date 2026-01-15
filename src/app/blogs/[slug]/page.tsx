@@ -188,7 +188,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               p: ({ node, children, ...props }) => {
                 // Check if children contain an img element by checking the node
                 const hasImage = node?.children?.some(
-                  (child: any) => child.tagName === 'img'
+                  (child: { tagName?: string }) => child.tagName === 'img'
                 );
                 // If paragraph contains only an image, render as div
                 if (hasImage) {
@@ -197,7 +197,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 return <p {...props}>{children}</p>;
               },
               // Image Handler
-              img: ({ node, ...props }) => {
+              img: ({ ...props }) => {
                 // If the src starts with /, it's an internal image (use next/image)
                 if (props.src?.startsWith("/")) {
                   return (
@@ -214,13 +214,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   );
                 }
                 // Fallback for external images (standard img tag)
-                // eslint-disable-next-line @next/next/no-img-element
                 return <img {...props} className="w-full h-auto rounded-xl border border-white/10" alt={props.alt || ""} />;
               },
               
               // Code Block Handler
               code(props) {
-                const {children, className, node, ref, ...rest} = props
+                const {children, className, ...rest} = props
                 const match = /language-(\w+)/.exec(className || '')
 
                 // Mermaid diagrams

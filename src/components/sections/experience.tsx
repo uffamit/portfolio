@@ -12,7 +12,7 @@ export default function Experience() {
         <div className="relative">
           <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border/40" />
           <div className="space-y-12">
-            {experienceData.map((exp, index) => (
+            {experienceData.map((exp) => (
               <div key={exp.company} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 border-2 border-primary absolute left-1/2 -translate-x-1/2 md:group-odd:left-1/2 md:group-even:left-1/2">
                   <Briefcase className="w-5 h-5 text-primary" />
