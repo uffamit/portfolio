@@ -1,0 +1,348 @@
+---
+title: "Python Functions, Iterators & Generators"
+date: "2026-01-24"
+description: "Master Python's core functional programming concepts - from lambda functions and decorators to memory-efficient generators and custom iterators. Production-ready patterns for modern Python development."
+tags: ["Python", "Functions", "Generators", "Iterators", "Functional Programming", "Memory Optimization", "Best Practices"]
+author: "Amit Divekar"
+---
+
+# Python Functions, Iterators & Generators: A Developer's Guide
+
+Functions are the building blocks of any Python application. But beyond basic function definitions, Python offers powerful features like lambda expressions, generators, and custom iterators that can make your code more elegant, efficient, and Pythonic. Let's dive into these concepts with real-world examples.
+
+## Lambda Functions: Inline Power
+
+Lambda functions are anonymous functions defined in a single line. They're perfect for simple operations, especially when used with functional programming tools like `map()`, `filter()`, and `reduce()`.
+
+### Basic Lambda Operations
+
+```python
+# Mathematical operations as lambdas
+add = lambda x, y: x + y
+subtract = lambda x, y: x - y
+multiply = lambda x, y: x * y
+cube = lambda x: x ** 3
+
+print(add(10, 5))       # 15
+print(multiply(10, 5))  # 50
+print(cube(3))          # 27
+```
+
+### Lambda with map()
+
+One of the most powerful use cases for lambda functions is combining them with built-in functions like `map()`:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # [1, 4, 9, 16, 25]
+```
+
+**Why this matters:** Lambda functions let you write transformation logic inline without cluttering your codebase with single-use function definitions.
+
+## Functions with Default Arguments
+
+Default parameters make your functions more flexible and reduce boilerplate code:
+
+```python
+def productInfo(name, price=100):
+    if price < 100:
+        print(f"{name} - Rs.{price}")
+
+productInfo("Pen", 50)      # Prints: Pen - Rs.50
+productInfo("Book", 150)    # No output (price >= 100)
+productInfo("Eraser")       # Uses default price of 100
+```
+
+**Production tip:** Use default arguments for optional configurations, API pagination limits, or fallback values.
+
+## Variable Arguments: *args and **kwargs
+
+Python's `*args` and `**kwargs` allow functions to accept any number of arguments, making them incredibly flexible.
+
+### Using **kwargs for Flexible APIs
+
+```python
+def employee_details(name, **info):
+    print(f"Employee Name: {name}")
+    for key, value in info.items():
+        print(f"{key}: {value}")
+
+employee_details("Amit", department="IT", salary=50000, experience=5)
+# Output:
+# Employee Name: Amit
+# department: IT
+# salary: 50000
+# experience: 5
+```
+
+### Combining *args and **kwargs
+
+```python
+def mixed_arguments(*args, **kwargs):
+    print("Positional arguments (*args):")
+    for arg in args:
+        print(arg)
+    
+    print("\nKeyword arguments (**kwargs):")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+mixed_arguments(1, 2, 3, "Hello", name="Amit", age=21, city="Mumbai")
+```
+
+**Real-world use case:** This pattern is essential for creating wrapper functions, decorators, and flexible APIs that can handle various input patterns.
+
+## Duck Typing: Python's Dynamic Nature
+
+Python's philosophy is "if it walks like a duck and quacks like a duck, it's a duck." This means functions can work with any object that has the required methods:
+
+```python
+def process_data(data):
+    print(f"Length of data: {len(data)}")
+    print(f"Data: {data}")
+
+process_data("Hello")                    # Works with strings
+process_data([1, 2, 3, 4, 5])           # Works with lists
+process_data((10, 20, 30))               # Works with tuples
+process_data({"name": "Amit", "age": 21}) # Works with dictionaries
+```
+
+**Key insight:** As long as an object implements the required interface (in this case, `__len__()`), it will work with your function.
+
+## Recursive Functions
+
+Recursion is a powerful technique where a function calls itself. Here's a practical example that reduces a number to a single digit:
+
+```python
+def sum_of_digits(n):
+    if n < 10:
+        return n
+    else:
+        digit_sum = 0
+        while n > 0:
+            digit_sum += n % 10
+            n = n // 10
+        return sum_of_digits(digit_sum)
+
+print(sum_of_digits(457))   # 4+5+7=16, 1+6=7
+print(sum_of_digits(9875))  # 9+8+7+5=29, 2+9=11, 1+1=2
+```
+
+**Performance note:** Recursion is elegant but watch for stack overflow with large inputs. Python has a default recursion limit of 1000.
+
+## Generators: Memory-Efficient Iteration
+
+Generators are functions that yield values one at a time instead of returning them all at once. This makes them incredibly memory-efficient.
+
+### Basic Generator
+
+```python
+def even_numbers():
+    for i in range(0, 11, 2):
+        yield i
+
+for num in even_numbers():
+    print(num)  # 0, 2, 4, 6, 8, 10
+```
+
+### Generator Pipeline for Data Processing
+
+Generators can be chained to create efficient data pipelines:
+
+```python
+def sensor_data_generator():
+    data = [25.5, 30.2, 22.8, 35.6, 28.3, 31.9, 26.7, 33.4]
+    for value in data:
+        yield value
+
+def filter_temperature(data):
+    for value in data:
+        if 25 < value < 35:
+            yield value
+
+def convert_to_fahrenheit(data):
+    for value in data:
+        yield (value * 9/5) + 32
+
+# Chain generators together
+pipeline = convert_to_fahrenheit(
+    filter_temperature(
+        sensor_data_generator()
+    )
+)
+
+for temp in pipeline:
+    print(f"{temp:.2f}°F")
+```
+
+### Memory Efficiency: Generators vs Lists
+
+Let's measure the actual memory savings:
+
+```python
+import sys
+
+def generator_numbers(n):
+    for i in range(n):
+        yield i
+
+def list_numbers(n):
+    return [i for i in range(n)]
+
+n = 10000
+
+gen = generator_numbers(n)
+lst = list_numbers(n)
+
+print(f"Generator: {sys.getsizeof(gen)} bytes")      # ~200 bytes
+print(f"List: {sys.getsizeof(lst)} bytes")           # ~85,176 bytes
+print(f"Memory saved: {sys.getsizeof(lst) - sys.getsizeof(gen)} bytes")
+```
+
+**Result:** Generators use ~400x less memory! This scales linearly with data size.
+
+## Custom Iterators
+
+While generators are great, sometimes you need more control. Custom iterators give you that by implementing `__iter__()` and `__next__()`:
+
+### Fibonacci Iterator
+
+```python
+class Fibonacci:
+    def __init__(self, limit=100):
+        self.limit = limit
+        self.a = 0
+        self.b = 1
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.a > self.limit:
+            raise StopIteration
+        current = self.a
+        self.a, self.b = self.b, self.a + self.b
+        return current
+
+fib = Fibonacci(100)
+for num in fib:
+    print(num, end=" ")  # 0 1 1 2 3 5 8 13 21 34 55 89
+```
+
+### String Permutations Iterator
+
+```python
+from itertools import permutations
+
+class StringPermutations:
+    def __init__(self, string):
+        self.string = string
+        self.perms = permutations(string)
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        perm = next(self.perms)
+        return ''.join(perm)
+
+perms = StringPermutations("ABC")
+for perm in perms:
+    print(perm)
+# Output: ABC, ACB, BAC, BCA, CAB, CBA
+```
+
+## List Comprehensions: Concise and Fast
+
+List comprehensions provide a concise way to create lists. They're often faster than equivalent `for` loops:
+
+```python
+# Finding prime numbers
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+primes = [num for num in range(1, 51) if is_prime(num)]
+print(primes)
+# [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+```
+
+**Performance tip:** List comprehensions are typically 30-40% faster than equivalent `for` loops due to internal optimizations.
+
+## Practical Examples
+
+### String Analysis Function
+
+```python
+def analyze_string(s):
+    vowels = consonants = digits = 0
+    
+    for char in s:
+        if char.isalpha():
+            if char.lower() in 'aeiou':
+                vowels += 1
+            else:
+                consonants += 1
+        elif char.isdigit():
+            digits += 1
+    
+    return vowels, consonants, digits
+
+vowels, consonants, digits = analyze_string("Hello World 123")
+print(f"Vowels: {vowels}, Consonants: {consonants}, Digits: {digits}")
+# Output: Vowels: 3, Consonants: 7, Digits: 3
+```
+
+### Multiple Return Values
+
+```python
+def min_max(numbers):
+    return min(numbers), max(numbers)
+
+numbers = [12, 45, 7, 89, 23, 56, 3]
+min_val, max_val = min_max(numbers)
+print(f"Min: {min_val}, Max: {max_val}")  # Min: 3, Max: 89
+```
+
+## Best Practices
+
+1. **Use generators for large datasets** - They're lazy and memory-efficient
+2. **Lambda for simple operations only** - Complex logic deserves a named function
+3. **Type hints for clarity** - Help others (and future you) understand function signatures
+4. **Default arguments for optional parameters** - Makes APIs more flexible
+5. **Duck typing wisely** - Write functions that work with multiple types when it makes sense
+
+## When to Use What
+
+| Use Case | Tool |
+|----------|------|
+| Simple inline operation | Lambda function |
+| Large dataset iteration | Generator |
+| Complex iteration logic | Custom iterator |
+| Variable function arguments | *args, **kwargs |
+| List transformation | List comprehension |
+| Streaming data processing | Generator pipeline |
+
+## Conclusion
+
+Python's function features—from lambdas to generators—aren't just syntactic sugar. They're powerful tools that can make your code more efficient, readable, and Pythonic. Generators alone can reduce memory usage by orders of magnitude, while iterators give you fine-grained control over iteration logic.
+
+The key is knowing when to use each tool. Start with simple functions, reach for generators when dealing with large datasets, and create custom iterators when you need complex iteration behavior.
+
+Master these patterns, and you'll write Python code that's not just functional, but elegant and efficient.
+
+---
+
+## Connect With Me
+
+If you found this helpful, let's connect! I share more insights on Python, software development, and best practices.
+
+- **GitHub**: [@amitdevx](https://github.com/amitdevx) - Check out my projects and code
+- **LinkedIn**: [Amit Divekar](https://www.linkedin.com/in/divekar-amit/) - Let's connect professionally
+
+Feel free to star the repos, share your thoughts, or reach out for collaboration!
