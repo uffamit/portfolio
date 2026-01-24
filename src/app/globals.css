@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* stylelint-disable at-rule-no-unknown */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 /* Critical path CSS - Optimized for LCP (Largest Contentful Paint) */
 html {
@@ -9,19 +10,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-/* Preload critical fonts */
-@supports (font-display: swap) {
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Space Grotesk';
-    font-display: swap;
-  }
 }
 
 @layer base {
@@ -77,11 +65,15 @@ html {
   }
   
   body {
-    @apply bg-background text-foreground font-body antialiased min-h-screen;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter, system-ui, -apple-system, 'Segoe UI', sans-serif);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
   
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   
   /* Optimize images */
@@ -153,3 +145,4 @@ html {
     contain: paint;
   }
 }
+/* stylelint-enable at-rule-no-unknown */
