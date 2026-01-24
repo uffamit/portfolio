@@ -1,8 +1,26 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import React from 'react';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+
+// Optimize font loading with next/font/google
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap', // Show fallback font while loading
+  preload: true,
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-space-grotesk',
+});
 
 // Responsive viewport configuration with theme color
 export const viewport: Viewport = {
@@ -243,12 +261,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         {/* DNS Prefetch and Preconnect for external resources */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://api.github.com" />
         
         {/* Preload critical assets */}
         <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />

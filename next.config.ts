@@ -13,6 +13,17 @@ const nextConfig: NextConfig = {
     return `build-${Date.now()}`;
   },
   
+  // Performance optimizations
+  experimental: {
+    optimizePackageImports: ['@radix-ui', 'lucide-react'], // Tree-shake unused code
+  },
+  
+  // Configure React settings for performance
+  reactStrictMode: true,
+  
+  // Optimize builds
+  staticPageGenerationTimeout: 120,
+  
   // Security and performance headers
   async headers() {
     return [
@@ -51,10 +62,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Security-Policy',
             value: `default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self';`
+          },
+          // Performance headers
+          {
+            key: 'Accept-CH',
+            value: 'DPR, Viewport-Width, Width'
           }
         ],
       },
-      // Cache static assets
+      // Cache static assets with long TTL
       {
         source: '/images/:path*',
         headers: [
@@ -66,6 +82,26 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Cache public assets
+      {
+        source: '/public/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+      // Cache fonts aggressively
+      {
+        source: '/fonts/:path*',
         headers: [
           {
             key: 'Cache-Control',
@@ -136,6 +172,11 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    // Image optimization settings
+    minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 
